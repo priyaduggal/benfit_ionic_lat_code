@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="text-left pad15">Filter</ion-title>
+    <ion-buttons slot="end" (click)="dismiss()"><ion-icon name="close-outline"></ion-icon></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="p8">
+  <ion-grid class="no-padding">
+    <ion-row>
+      <ion-col leftTabs size="5">
+        <ion-segment [(ngModel)]="filtertab" color="primary">
+          <ion-segment-button lines="no" value="price">
+              <span>Price</span>
+          </ion-segment-button>
+          <ion-segment-button value="category">
+            <span>Category</span>
+          </ion-segment-button>
+          <ion-segment-button value="discounts">
+            <span>Discounts</span>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+      <ion-col size="7">
+        <div [ngSwitch]="filtertab">
+          <div *ngSwitchCase="'price'">
+        <ion-row>
+        <ion-col>
+        <ion-range dualKnobs="true"    [min]=timeMin [max]=timeMax (ionChange)="setBadge(time)" [(ngModel)]="time"  step="3"  pin="true">
+        <!--ion-range min="0" max="5000"  [(ngModel)]="prange" color="secondary"-->
+        <ion-label slot="start">{{timeMin}}</ion-label>
+        <ion-label slot="end">{{timeMax}}</ion-label>
+        </ion-range>
+        </ion-col>
+        </ion-row>
+
+          </div>
+          <div centerDiv *ngSwitchCase="'category'">
+
+           
+            <ion-row   *ngFor="let cat of categories">
+              <ion-col>
+                <ion-grid class="ion-no-padding">
+                  <ion-row >
+                    <ion-col size="12" class="filtercat">
+                      <div>
+                        <ion-checkbox color="light" class="categories" (click)="category(cat?.id)"></ion-checkbox> <span>{{cat?.name}}</span>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div centerDiv *ngSwitchCase="'discounts'">
+            <ion-row>
+              <ion-col>
+                <ion-grid class="ion-no-padding">
+                  <ion-row >
+                    <ion-col size="12" class="filtercat">
+                      <div>
+                        <ion-checkbox color="light" (click)="discount('70')"></ion-checkbox> <span>70% or more</span>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-grid class="ion-no-padding">
+                  <ion-row >
+                    <ion-col size="12" class="filtercat">
+                      <div>
+                        <ion-checkbox color="light" (click)="discount('60')"></ion-checkbox> <span>60% or more</span>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-grid class="ion-no-padding">
+                  <ion-row >
+                    <ion-col size="12" class="filtercat">
+                      <div>
+                        <ion-checkbox color="light"  (click)="discount('80')"></ion-checkbox> <span>80% or more</span>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-grid class="ion-no-padding">
+                  <ion-row >
+                    <ion-col size="12" class="filtercat">
+                      <div>
+                        <ion-checkbox color="light"  (click)="discount('30')"></ion-checkbox> <span>30% or more</span>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-grid class="ion-no-padding">
+                  <ion-row >
+                    <ion-col size="12" class="filtercat">
+                      <div>
+                        <ion-checkbox color="light"  (click)="discount('20')"></ion-checkbox> <span>20% or more</span>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-grid class="ion-no-padding">
+                  <ion-row >
+                    <ion-col size="12" class="filtercat">
+                      <div>
+                        <ion-checkbox color="light"  (click)="discount('10')"></ion-checkbox> <span>10% or more</span>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="12" btnbottom>
+	  <ion-button color="primary"  shape="round" (click)="submit()">
+	    Apply
+	  </ion-button>
+	   <ion-button color="primary"  shape="round" fill="outline">
+	    Clear
+	  </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

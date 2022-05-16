@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+	  <ion-back-button slot="start" defaultHref="/chooseworkout"  icon="chevron-back-outline">
+    </ion-back-button >
+     <ion-title class="ion-text-center">Workout Videos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+      <p *ngIf="exercises?.length==0">No records found!!</p>
+    <div videoBox routerLink="/chooseworkout/videodetails/{{exercise?.id}}" style="background-image: url('{{IMAGES_URL}}/{{exercise?.thumbnail_image}}');" *ngFor="let exercise of exercises">
+      <div videoContent>
+        <h3>{{exercise?.title}}</h3>
+        <h4>{{exercise?.duration}} mins</h4>
+      </div>
+      <img src="assets/images/donecheck.svg"  [ngClass]="exercise.watched == 1 ? 'bordered': 'greyedOut'" />
+    </div>
+  </div>
+
+</ion-content>

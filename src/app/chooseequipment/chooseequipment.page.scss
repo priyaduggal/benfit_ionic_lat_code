@@ -1,0 +1,92 @@
+ion-header {
+	padding: 0 15px;
+	position: absolute;
+	--box-shadow: none;
+	ion-toolbar {
+		background-color: transparent;
+		--background: transparent;
+		--border-width: 0;
+		ion-title {
+			color: #000;
+			font-size: 22px;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+				ion-buttons , ion-back-button{
+			position: absolute;
+			font-size: 20px;
+			left: -10px;
+			z-index:99;
+			color:var(--ion-color-primary);
+			ion-icon {
+				font-size: 20px;
+				color:var(--ion-color-primary);
+			}
+		}
+	}
+}
+
+ion-content{
+    background-color: #E5E5E5;
+    [wrapper]{
+        padding: 60px 15px 15px;
+        [workOut]{
+            // background: #FFFFFF;
+            // box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.12);
+            // border-radius: 16px;
+            // padding: 40px 20px;
+            // text-align: center;
+            // h3{
+            //     margin-bottom: 0;
+            // }
+            label {
+                width: 100%;
+            }
+
+            .card-input-element {
+                  display: none;
+            }
+
+              .card-input {
+                background: #FFFFFF;
+                box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.12);
+                border-radius: 16px;
+                box-sizing: border-box;
+
+                display: block;
+                padding: 20px 20px;
+                overflow: hidden;
+              }
+
+              .card-input:hover {
+                  cursor: pointer;
+              }
+
+              .card-input-element:checked + .card-input {
+                background-color: #56BCB4;
+                transition: all ease .1s;
+                .panel-body{
+                    h3{
+                        color: #fff;
+                    }
+                  }
+              }
+
+              .panel{
+                .panel-body{
+                    img{
+                        width: 110px;
+                        height: 110px;
+                        object-fit: contain;
+                    }
+                    h3{
+                       margin-bottom: 0;
+                       font-weight: 600;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+}

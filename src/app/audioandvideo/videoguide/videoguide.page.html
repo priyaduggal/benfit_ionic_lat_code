@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/audioandvideo" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">Video Guides</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <p *ngIf="videos.length==0">Video's not found</p>
+    <div videoBox routerLink="/tabata/tabatadetails/{{vid?.id}}" style="background-image: url('{{IMAGES_URL}}/{{vid?.thumbnail_image}}');" *ngFor="let vid of videos">
+      <div videoContent>
+        <h3>{{vid?.title}}</h3>
+        <h4>{{vid?.duration}} mins</h4>
+      </div>
+    </div>
+  </div>
+</ion-content>

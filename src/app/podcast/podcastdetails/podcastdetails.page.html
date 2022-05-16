@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/podcast" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div fixback>
+    <p norecord *ngIf="details?.length==0">Episodes not found</p>
+    <ion-row   *ngIf="details?.length>0">
+      <ion-col size="6">
+        <ion-img src="{{IMAGES_URL}}/{{details[0]?.image}}"></ion-img>
+      </ion-col>
+      <ion-col size="6">
+        <div fixbackContent>
+          <h2>{{details[0]?.title}}</h2>
+          <span>{{details[0]?.name}}</span>
+          <ion-button shape="round" color="primary">Play</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div wrapper  *ngIf="details?.length>0">
+    <ion-segment [(ngModel)]="podcastab" color="primary">
+      <ion-segment-button lines="no" value="podcasts">
+          <span>Podcasts</span>
+      </ion-segment-button>
+      <ion-segment-button value="info">
+        <span>Info</span>
+      </ion-segment-button>
+    </ion-segment>
+
+    
+
+    <div [ngSwitch]="podcastab">
+      <div *ngSwitchCase="'podcasts'">
+        <div pdHeading mb10>
+          <h2>Episodes ({{details?.length}})</h2>
+        </div>
+        <div boxShadow *ngFor="let det of details">
+          <div padBox>
+
+            <!--ion-thumbnail>
+            
+              
+              <a routerLink="/podcast/podcastplay">
+                <img src="assets/images/play.svg"/></a>
+            </ion-thumbnail-->
+             
+            <ion-label>
+              <h5 epiHeading>{{det?.title}}</h5>
+              <h2>{{det?.created_at | date:'dd MMM yyyy'}}</h2>
+               <audio controls style="width: 100%">
+                  <source src="{{IMAGES_URL}}/{{det?.audio}}" type="audio/mpeg">
+                </audio>
+            </ion-label>
+            <!--h6 downLoadImg>
+              <span>12:30</span> <br /> 10mb
+            </h6-->
+            <!--h6 downLoadImg1>
+              <img src="assets/images/download1.svg" />
+            </h6-->
+          </div>
+        </div>
+
+      </div>
+
+      <div *ngSwitchCase="'info'">
+        <p summaryPara *ngFor="let det of details" >{{det?.info}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

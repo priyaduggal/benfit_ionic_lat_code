@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+     <ion-back-button slot="start" defaultHref="/chooseequipment"  icon="chevron-back-outline">
+     </ion-back-button >
+     <ion-title class="ion-text-center">Coupons</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  style="background-image: url('assets/images/circlebg.svg');">
+  <div class="ion-padding" coupons>
+     <ion-card routerLink="/scanner/{{co?.random}}"  class="ion-no-margin" bg1   *ngFor="let co of couponlist">
+        <div couponimg  bg1>
+           <img bgimg src="assets/images/patterncoupon.svg"/>
+           <div couponinner>
+              <div couponleft>
+                 <img src="{{IMAGES_URL}}/{{co?.image}}"/>
+              </div>
+              <div couponright>
+                 <h3>{{co?.discount}}%</h3>
+              </div>
+           </div>
+        </div>
+        <ion-card-content>
+         
+           <h2>{{co?.title}}</h2>
+           <p>Valid Untill {{co?.expiry_date |  date:'MMM d, Y'}}</p>
+        </ion-card-content>
+     </ion-card>
+     <!--ion-card routerLink="/scanner"  class="ion-no-margin" bg2>
+        <div couponimg  bg2>
+           <img bgimg src="assets/images/patterncoupon.svg"/>
+           <div couponinner>
+              <div couponleft>
+                 <img src="assets/images/coupon2.png"/>
+              </div>
+              <div couponright>
+                 <h3>19%</h3>
+              </div>
+           </div>
+        </div>
+        <ion-card-content>
+           <h2>Applies To First Purchase</h2>
+           <p>Valid Untill 19th August 2021</p>
+        </ion-card-content>
+     </ion-card-->
+     <!--ion-card routerLink="/scanner"  class="ion-no-margin" bg3>
+        <div couponimg  bg3>
+           <img bgimg src="assets/images/patterncoupon.svg"/>
+           <div couponinner>
+              <div couponleft>
+                 <img src="assets/images/coupon3.png"/>
+              </div>
+              <div couponright>
+                 <h3>25%</h3>
+              </div>
+           </div>
+        </div>
+        <ion-card-content>
+           <h2>Applies To First Purchase</h2>
+           <p>Valid Untill 19th August 2021</p>
+        </ion-card-content>
+     </ion-card-->
+     <!--ion-card routerLink="/scanner"  class="ion-no-margin" bg4>
+        <div couponimg  bg4>
+           <img bgimg src="assets/images/patterncoupon.svg"/>
+           <div couponinner>
+              <div couponleft>
+                 <img src="assets/images/coupon4.png"/>
+              </div>
+              <div couponright>
+                 <h3>50%</h3>
+              </div>
+           </div>
+        </div>
+        <ion-card-content>
+           <h2>Applies To First Purchase</h2>
+           <p>Valid Untill 19th August 2021</p>
+        </ion-card-content>
+     </ion-card-->
+  </div>
+</ion-content>

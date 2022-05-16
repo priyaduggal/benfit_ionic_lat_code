@@ -1,0 +1,125 @@
+ion-header {
+	padding: 0 15px;
+	position: absolute;
+	--box-shadow: none;
+	ion-toolbar {
+		background-color: transparent;
+		--background: transparent;
+		--border-width: 0;
+		ion-title {
+			color: #000;
+			font-size: 22px;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+				ion-buttons , ion-back-button{
+			position: absolute;
+			font-size: 20px;
+			left: -10px;
+			z-index:99;
+			color:var(--ion-color-primary);
+			ion-icon {
+				font-size: 20px;
+				color:var(--ion-color-primary);
+			}
+		}
+	}
+}
+ion-content {
+	--background: none;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: #F7F7F7;
+	
+	[coupons]
+	{margin-top: 40px;
+	[bg1]
+	{ background:var(--ion-color-primary);;
+	}
+	[bg2]
+	{ background:#D80034;
+	}
+	[bg3]
+	{ background:#F8C100;
+	}
+	[bg4]
+	{ background:#7C56BB;
+	}
+	  ion-card
+	  {min-height: 180px;
+	  border-radius:16px;
+	  box-shadow:none;	
+	 overflow:hidden;
+	 position:relative;
+	 margin-bottom:20px;
+	  [couponimg]
+	  {display:grid;
+	  width:100%;
+	  [couponinner]
+	  {
+	        position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+		[couponleft]
+		{margin: 15px 0px 0px 15px;
+		 width:76px;
+		 height:76px;
+		 background:#fff;
+		 border-radius:50%;
+		 display:flex;
+		 align-items:center;
+		 justify-content:Center;
+		 img
+		 { 
+		     max-width: 60px;
+           max-height: 60px;
+		  object-fit:contain;
+		 }
+		}
+		[couponright]
+		{
+		  background:url(../../assets/images/circle-coupon.svg);
+		  background-repeat:no-repeat;
+		  background-size:132px;
+		  width:132px;
+		  height:132px;
+		  margin-right: -20px;
+          margin-top: -20px;
+		  display: flex;
+    align-items: center;
+    justify-content: center;
+	h3
+	{
+	color:#fff;
+	font-size:40px;
+	}
+		}
+	  }
+	  [bgimg]
+	  {
+	  width:100%;
+	  }
+	  }
+	  ion-card-content
+	  {position: absolute;
+       bottom: 0;
+	    h2
+		{
+		font-size:20px;
+		color: #fff;
+         font-weight: 600;
+		}
+		p
+		{
+		font-size:15px;
+		color: #fff;
+         font-weight: 400;
+		}
+	  }
+	  }
+	}
+}

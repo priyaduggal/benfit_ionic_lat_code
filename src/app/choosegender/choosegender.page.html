@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/login" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    <!--ion-title class="ion-text-center"></ion-title-->
+	<span slot="end" totalquestion>Question 1 <small>of 16</small></span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div wrapper>
+    <h1 choose-head>What’s your sex?</h1>
+    <p class="pHeader">Your Coach uses this information to design the most effective traning program for you.</p>
+    <div genderBox>
+      <ion-row>
+        <ion-col size="6">
+          <label>
+            <input type="radio" name="product" class="card-input-element Male" value="M"/>
+            <div class="panel panel-default card-input ion-text-center" 
+            style="background-image:url('assets/images/manbg.png')" (click)="choose('M')">
+              <div class="panel-heading"><img src="assets/images/maleicon.svg" /> Male</div>
+              <!-- <div class="panel-body">
+                <img src="assets/images/male.png" genImg />
+              </div> -->
+            </div>
+          </label>
+        </ion-col>
+        <ion-col size="6">
+          <label>
+            <input type="radio" name="product" class="card-input-element Fale" value="F"/>
+            <div class="panel panel-default card-input ion-text-center"
+            style="background-image:url('assets/images/femalebg.png')" (click)="choose('F')">
+              <div class="panel-heading"><img src="assets/images/femaleicon.svg" /> Female</div>
+              <!-- <div class="panel-body">
+                <img src="assets/images/female.png" genImg />
+              </div> -->
+            </div>
+          </label>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div gwt-next-foot class="ion-text-center">
+      <ion-button shape="round" routerLink="/question2" color="primary">Skip</ion-button>
+    <ion-button shape="round" (click)="submit()" color="primary">Next</ion-button>
+
+  </div>
+</ion-footer>

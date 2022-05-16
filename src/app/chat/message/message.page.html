@@ -1,0 +1,142 @@
+<ion-header [class.show-background]="showToolbar">
+  <ion-toolbar>
+     <ion-back-button slot="start"  text=""  icon="chevron-back-outline" (click)="back();"></ion-back-button>
+     <div userImg>
+      <div>
+        <img src="assets/images/image.jpg" image *ngIf="errors.indexOf(todata?.image)>=0">
+        <img src="{{IMAGES_URL}}/{{todata?.image}}" image *ngIf="errors.indexOf(todata?.image)==-1">
+        <span></span>
+      </div>
+      <h4>{{todata?.first_name}} {{todata?.last_name}}</h4>
+    </div>
+     <!--ion-buttons callvideo slot="end"><ion-icon name="call"></ion-icon></ion-buttons>-->
+     <ion-buttons routerLink="/chat/videocalling" callvideo slot="end"><ion-icon name="videocam"></ion-icon></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)" style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <!--div heading>
+      <h2>Today</h2>
+    </div-->
+    <ion-item lines="none" class="ion-no-padding" [ngClass]="chat?.to_id == userid ? 'sender': 'receiver'"   *ngFor="let chat of chats;let i=index;">
+      <ion-label>
+          <div msgcount>
+            <p *ngIf="errors.indexOf(chat?.message)==-1">{{chat?.message}}</p>
+            <img src="{{IMAGES_URL}}/{{chat?.attachment}}" *ngIf="errors.indexOf(chat?.attachment)==-1"/>
+             <div dropbtn  *ngIf="chat?.from_id==userid">
+                <ion-buttons  (click)="hide1(chat?.id)" class="dots"slot="end">
+                  <ion-icon name="ellipsis-vertical"></ion-icon>
+                </ion-buttons>
+                <div dropdown style="display: none;" class="dropdowndelete dropdowndelete{{chat?.id}}" (click)="delete(chat?.id,i)">
+                  <p> Delete</p>
+                </div>
+            </div>
+          </div>
+          <ion-note>{{chat?.created_at | date:'hh:mm a'}}
+
+
+          <ion-icon *ngIf="chat?.from_id==userid && chat?.status==1" name="checkmark-done"></ion-icon>
+        </ion-note>
+      </ion-label>
+    </ion-item>
+    <!--ion-item lines="none" class="ion-no-padding" >
+      <ion-label>
+          <div msgcount>
+            <p>¡Jaja de verdad! ¡Encantado de conocerte Grace! ¿Qué tal una taza de café hoy por la noche? ☕️ </p>
+            <div dropbtn>
+                <ion-buttons  (click)="hide1()" slot="end">
+                  <ion-icon name="ellipsis-vertical"></ion-icon>
+                </ion-buttons>
+                <div dropdown *ngIf="hideMe1">
+                  <p> Delete</p>
+                </div>
+            </div>
+          </div>
+          <ion-note>
+            2:58 PM
+            <ion-icon name="checkmark-done"></ion-icon>
+          </ion-note>
+      </ion-label>
+    </ion-item-->
+    <!--ion-item lines="none" class="ion-no-padding" sender>
+      <ion-label>
+          <div msgcount>
+            <p>Sure, let’s do it! 😊</p>
+          </div>
+          <ion-note>15 min ago</ion-note>
+      </ion-label>
+    </ion-item-->
+    <!--ion-item lines="none" class="ion-no-padding" receiver>
+      <ion-label>
+          <div msgcount>
+            <p>Great I will write later the
+                time and place. See you soon!
+            </p>
+            <div dropbtn>
+                <ion-buttons  (click)="hide2()" slot="end">
+                  <ion-icon name="ellipsis-vertical"></ion-icon>
+                </ion-buttons>
+                <div dropdown *ngIf="hideMe2">
+                  <p> Delete</p>
+                </div>
+            </div>
+          </div>
+          <ion-note>
+            3:12 PM
+            <ion-icon name="checkmark-done"></ion-icon>
+          </ion-note>
+      </ion-label>
+    </ion-item-->
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="imgboX" *ngIf="is_license_uploaded == true"  > 
+      <img 
+      [src]="sanitizer.bypassSecurityTrustUrl(license_image_url)"
+      class="table-user rounded-circle img-thumbnail" imageattachement >
+      <ion-icon name="close-circle" (click)="destroy()"></ion-icon>
+  </div>
+
+      <div commentbox>
+  
+    <!--emoji-mart title="Pick your emoji…" emoji="point_up"></emoji-mart>
+<emoji-mart set="emojione"></emoji-mart-->
+
+ <emoji-mart
+        [set]="set"
+        [darkMode]="darkMode"
+        [isNative]="native"
+        [hideRecent]="false"
+        [custom]="CUSTOM_EMOJIS"
+        (emojiSelect)="handleClick($event)"
+        title="Pick your emoji…"
+        emoji="point_up"
+        *ngIf="showCity === true"
+         [style]="{ width: '100%',position: 'absolute', bottom: '61px' }" 
+      >
+      </emoji-mart>
+<!--emoji-mart emoji="" perLine="6" [style]="{ width: '100%',position: 'absolute', bottom: '61px' }" *ngIf="showCity === true" (emojiClick)="addEmoji($event)"></emoji-mart-->
+<!--emoji-mart [style]="{ position: 'absolute', bottom: '20px', right: '20px' }"></emoji-mart>
+<emoji-mart
+  [i18n]="{ search: 'Recherche', categories: { search: 'Résultats de recherche', recent: 'Récents' } }"
+></emoji-mart-->
+     <ion-item lines="none">
+        <img slot="start" smileB src="assets/images/happy.svg"  (click)="moreInfo()"/>
+       
+   
+
+    <ion-input  #input type="text" placeholder="Your message" [(ngModel)]="message" name="message" ></ion-input>
+
+     <label  for="lae-imgs">
+         <img slot="end" for="lae-imgs"  src="assets/images/attach.svg"/>
+      <input style="visibility:hidden; width:0px; height:0px;" id="lae-imgs"  
+      (change)="uploadLicense($event,'profile')" name="user-img" type="file" >
+      </label>
+      
+     </ion-item>
+     <ion-buttons iconright>
+      <img slot="end" (click)="send();" src="assets/images/send.svg"/>
+     </ion-buttons>
+  </div>
+</ion-footer>

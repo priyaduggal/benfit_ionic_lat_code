@@ -1,0 +1,171 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/tabs/settings" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">week planning</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <accordion [showArrows]="true">
+      <accordion-group>
+          <accordion-heading>
+            <div accHeader>
+                <strong>Sunday</strong>
+            </div>
+          </accordion-heading>
+          <div accPadding>
+            <h3><span>Diet</span></h3>
+            <ion-row>
+              <ion-col size="4" routerLink="/receipes/recipesdetails">
+                <img src="assets/images/meals.jpg" />
+                <h5>Breakfast</h5>
+              </ion-col>
+              <ion-col size="4" routerLink="/receipes/recipesdetails">
+                <img src="assets/images/meals1.jpg" />
+                <h5>Breakfast</h5>
+              </ion-col>
+              <ion-col size="4" routerLink="/receipes/recipesdetails">
+                <img src="assets/images/meals3.jpg" />
+                <h5>Breakfast</h5>
+              </ion-col>
+            </ion-row>
+
+            <h3 affterH3><span>Exercise</span></h3>
+            <ion-row>
+              <ion-col size="4" routerLink="/chooseworkout/videodetails">
+                <div workOut routerLink="workoutvideos">
+                  <label>
+                    <div class="panel panel-default card-input ion-text-center">
+                      <div class="panel-body">
+                        <img src="assets/images/shoulder.svg" />
+                        <h3>Shoulder</h3>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </ion-col>
+              <ion-col size="4" routerLink="/chooseworkout/videodetails">
+                <div workOut routerLink="workoutvideos">
+                  <label>
+                    <div class="panel panel-default card-input ion-text-center">
+                      <div class="panel-body">
+                        <img src="assets/images/leg.svg" />
+                        <h3>Leg</h3>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+      </accordion-group>
+      <accordion-group>
+          <accordion-heading>
+            <div accHeader>
+                <strong> Monday </strong>
+            </div>
+          </accordion-heading>
+          <div accPadding>
+            <h3><span>Diet</span></h3>
+            <ion-row>
+              <ion-col size="4" routerLink="/receipes/recipesdetails">
+                <img src="assets/images/meals.jpg" />
+                <h5>Breakfast</h5>
+              </ion-col>
+              <ion-col size="4" routerLink="/receipes/recipesdetails">
+                <img src="assets/images/meals1.jpg" />
+                <h5>Breakfast</h5>
+              </ion-col>
+              <ion-col size="4" routerLink="/receipes/recipesdetails">
+                <img src="assets/images/meals3.jpg" />
+                <h5>Breakfast</h5>
+              </ion-col>
+            </ion-row>
+
+            <h3 affterH3><span>Exercise</span></h3>
+            <ion-row>
+              <ion-col size="4" routerLink="/chooseworkout/videodetails">
+                <div workOut routerLink="workoutvideos">
+                  <label>
+                    <div class="panel panel-default card-input ion-text-center">
+                      <div class="panel-body">
+                        <img src="assets/images/shoulder.svg" />
+                        <h3>Shoulder</h3>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </ion-col>
+              <ion-col size="4" routerLink="/chooseworkout/videodetails">
+                <div workOut routerLink="workoutvideos">
+                  <label>
+                    <div class="panel panel-default card-input ion-text-center">
+                      <div class="panel-body">
+                        <img src="assets/images/leg.svg" />
+                        <h3>Leg</h3>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+      </accordion-group>
+      <accordion-group [isOpened]="true">
+          <accordion-heading>
+            <div accHeader>
+                <strong>Tuesday</strong>
+            </div>
+          </accordion-heading>
+          <div accPadding>
+            <h3><span>Diet</span></h3>
+            <ion-row>
+              <ion-col size="4" routerLink="/receipes/recipesdetails">
+                <img src="assets/images/meals.jpg" />
+                <h5>Breakfast</h5>
+              </ion-col>
+              <ion-col size="4" routerLink="/receipes/recipesdetails">
+                <img src="assets/images/meals1.jpg" />
+                <h5>Breakfast</h5>
+              </ion-col>
+              <ion-col size="4" routerLink="/receipes/recipesdetails">
+                <img src="assets/images/meals3.jpg" />
+                <h5>Breakfast</h5>
+              </ion-col>
+            </ion-row>
+
+            <h3 affterH3><span>Exercise</span></h3>
+            <ion-row>
+              <ion-col size="4" routerLink="/chooseworkout/videodetails">
+                <div workOut routerLink="workoutvideos">
+                  <label>
+                    <div class="panel panel-default card-input ion-text-center">
+                      <div class="panel-body">
+                        <img src="assets/images/shoulder.svg" />
+                        <h3>Shoulder</h3>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </ion-col>
+              <ion-col size="4" routerLink="/chooseworkout/videodetails">
+                <div workOut routerLink="workoutvideos">
+                  <label>
+                    <div class="panel panel-default card-input ion-text-center">
+                      <div class="panel-body">
+                        <img src="assets/images/leg.svg" />
+                        <h3>Leg</h3>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+      </accordion-group>
+    </accordion>
+  </div>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/question17" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">UPLOAD PHOTO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="assets/images/uploadBg.svg" bgCamera />
+  <div wrapper>
+    <img src="assets/images/uploadCamera.svg" />
+    <p>Take a Photo or choose <br /> from library</p>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div bottomBtm class="ion-text-center">
+    <ion-button shape="round" routerLink="/aim" color="primary">Continue</ion-button>
+  </div>
+  <div bottomBtm class="ion-text-center" >
+    <ion-button shape="round" class="skipbtn" routerLink="/aim" color="">Skip</ion-button>
+  </div>
+</ion-footer>

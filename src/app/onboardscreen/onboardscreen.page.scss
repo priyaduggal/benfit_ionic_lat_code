@@ -1,0 +1,65 @@
+ion-slides {
+  height: 100%;
+  position: relative;
+  --bullet-background:#ccc;
+  --bullet-background-active:#ccc;
+  ion-slide{
+    --background: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 42px 25px;
+    [curveBox]{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    [slideBox]{
+      position: absolute;
+      bottom: 10px;
+      padding: 16px;
+      
+      h1{
+        font-size: 30px;
+        margin: 0 0 110px;
+        color: #000;
+      }
+      p{
+        font-size: 18px;
+        width: 85%;
+        margin: 78px auto 25px;
+        font-weight: 400;
+        color: #575757;
+        letter-spacing: 0.5px;
+        min-height: 70px;
+
+      }
+      [btnFoot]{
+        display: flex;
+        align-items: center;
+        ion-button{
+          height: 56px;
+          width: 80%;
+          margin-right: 20px;
+        }
+        a{
+          color: #000;
+          text-decoration: none;
+        }
+      }
+      [btnFoot1]
+      {
+        ion-button{
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+
+    }
+  }
+  ::ng-deep{
+    .swiper-pagination{
+      bottom: 31%;
+    }
+  }
+}
+

@@ -1,0 +1,31 @@
+<ion-header [class.show-background]="showToolbar">
+    <ion-toolbar class="py-2" lines="none">
+       <ion-back-button slot="start" defaultHref=""  icon="chevron-back-outline">
+    </ion-back-button >
+       
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div wrapper>
+<div class="covrz">
+<img src="assets\images\img-main.png">
+<div mainz-sid>
+<h4>Fitklusiv</h4>
+<p>Münsterstraße 398<br>
+40470 Düssedlorf</p>
+</div>
+</div>
+<img class="mainmd" src="assets\images\maind.png">
+<div class="mains">
+<h4>Studio-details</h4>
+<p>Fitklusiv offers you the full variety of Fitness, Functional Training and Courses in Mörsenbroich!</p>
+</div>
+<div class="mains">
+<h4>available sports </h4>
+<p>Fitness, Pilates, Yoga, Functional Training</p>
+</div>
+
+</div>
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/cart" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">Checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <div checkout>
+      <div sHeading><h2>Shipping address</h2></div>
+      <div saddress>
+        <h3>Carla Willis</h3>
+        <div addContent>
+          <p>1620  Hill Haven Drive Waco, <br /> TX 76701, United States</p>
+          <span>Edit</span>
+        </div>
+      </div>
+
+      <div sHeading><h2>Payment</h2></div>
+
+      <div class="checkRadio">
+        <!--label class="cardBox">
+          <input name="plan" checked class="radio" type="radio">
+          <div class="plan-details" aria-hidden="true">
+             <img src="assets/images/paypal.png" />
+          </div>
+        </label>
+        <label class="cardBox">
+          <input name="plan" class="radio" type="radio">
+          <div class="plan-details" aria-hidden="true">
+             <img src="assets/images/stripe.png" />
+          </div>
+        </label-->
+        <label class="cardBox">
+          <input name="plan" class="radio" type="radio" checked="true" value="cash">
+          <div class="plan-details" aria-hidden="true">
+             <h4>Cash on Delivery</h4>
+          </div>
+        </label>
+      </div>
+
+      <div totalDetails>
+        <p>
+          <span>Total</span>
+          <span>${{totalpt}}</span>
+        </p>
+        <p>
+          <span>Delivery:</span>
+          <span>$0.00</span>
+        </p>
+        <p>
+          <span>Summary:</span>
+          <span>${{totalpt}}</span>
+        </p>
+      </div>
+    </div>
+
+    <div bottomBtm class="ion-text-center">
+      <ion-button shape="round" expand="full" (click)="submit()" color="primary">Place Order</ion-button>
+    </div>
+  </div>
+</ion-content>

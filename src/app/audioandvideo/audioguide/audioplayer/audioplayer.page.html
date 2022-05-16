@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/audioandvideo/audioguide" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <!-- <ion-title class="ion-text-center">Audio Player</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<!--audio id="themeMusic" controls  autoplay="autoplay" loop="loop">  
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3" />
+</audio-->
+<ion-content style="background-image: url('assets/images/glow2.svg');">
+  <ang-music-player 
+    class="audioPlayer" 
+    [audioList] = "audioList"
+  >
+  </ang-music-player>
+</ion-content>

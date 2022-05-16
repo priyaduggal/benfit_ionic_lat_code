@@ -1,0 +1,26 @@
+<ion-header >
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/settings/blog" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Our blog</ion-title>
+    <ion-img slot="end" routerLink="/settings/blog/addblog" src="assets/images/corssnoti.svg"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg1.svg');">
+  <div wrapper>
+    <div eventContainer>
+      <div eventBoxImg style="background-image: url('{{IMAGES_URL}}/{{details?.image}}');"*ngIf="errors.indexOf(details?.image)==-1">
+
+        <div eventDesc>
+          <h3>{{details?.title}}</h3>
+          <p><span>{{details?.created_at | date: 'dd MMM yyyy'}}</span></p>
+        </div>
+      </div>
+
+         <div class="blog-post" [innerHtml]="details?.description"></div>
+      
+    </div>
+  </div>
+</ion-content>

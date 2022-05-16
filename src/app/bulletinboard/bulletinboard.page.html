@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/tabs/settings" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Bulletin board</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+<div calendarbg class="ion-text-center"   style="background-image: url('assets/images/circlebg.svg');">
+ 
+  <!--img src="assets/images/calendar.jpg" /-->
+  <ion-calendar name="date" [(ngModel)]="date" 
+     (change)="onChange($event)"
+      [type]="type"
+      [format]="'YYYY-MM-DD'">
+    </ion-calendar>
+</div>
+   
+  <div wrapper>
+    <p norecords *ngIf="events.length==0">No records found</p>
+    <div listCard *ngFor="let event of events">
+      <h2>{{event?.time_from}} - {{event?.time_to}}</h2>
+      <p>{{event?.title}}</p>
+    </div>
+
+    
+  </div>
+</ion-content>

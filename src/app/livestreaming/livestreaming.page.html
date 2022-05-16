@@ -1,0 +1,70 @@
+<ion-content style="background-image: url('assets/images/liveStraming.jpg');">
+  <div flexBox>
+    <img ml0 src="assets/images/liveimg.png" /> 
+    Veronica Demon
+    <div liveBox>
+      <img src="assets/images/reddot.svg" />
+      Live
+    </div>
+  </div>
+  <div buttonBox>
+    <img src="assets/images/crosswhite.svg" />
+    <img cm1 src="assets/images/cameraa.svg" />
+    <img mute1 src="assets/images/mute1.svg" />
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div userShowBox>
+    <ion-row>
+      <ion-col size="8">
+        <div profileBox> 
+          <div padBox>
+            <ion-thumbnail>
+              <img src="assets/images/userimg.jpg">
+            </ion-thumbnail>
+            <ion-label>
+              <p class="mt-0" category> <span>Marvis Ighedosa</span></p>
+              <p pricePro>Hello</p>
+            </ion-label>
+          </div>
+          <div padBox>
+            <ion-thumbnail>
+              <img src="assets/images/u1.png">
+            </ion-thumbnail>
+            <ion-label>
+              <p class="mt-0" category> <span>Marvis Ighedosa</span></p>
+              <p pricePro>Love to watch your videos and live streams</p>
+            </ion-label>
+          </div>
+          <div padBox>
+            <ion-thumbnail>
+              <img src="assets/images/userimg.jpg">
+            </ion-thumbnail>
+            <ion-label>
+              <p class="mt-0" category> <span>Marvis Ighedosa</span></p>
+              <p pricePro>Hello</p>
+            </ion-label>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div userPics>
+          <img src="assets/images/userimg.jpg" />
+          <img src="assets/images/user1.png" />
+          <img src="assets/images/userimg.jpg" />
+          <img src="assets/images/user1.png" />
+          <span>15+</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div commentbox>
+     <ion-item lines="none">
+        <ion-input type="text" placeholder="Add Comment"></ion-input>
+     </ion-item>
+     <ion-buttons iconright (click)="presentAlert()">
+      <img slot="end" src="assets/images/send1.svg"/>
+     </ion-buttons>
+  </div>
+</ion-footer>

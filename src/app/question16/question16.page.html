@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <!--ion-buttons slot="start">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-buttons-->
+	<ion-back-button slot="start" defaultHref="/question15" text="" icon="chevron-back-outline"></ion-back-button>
+    <!--ion-title class="ion-text-center"></ion-title-->
+	<span slot="end" totalquestion>Question 14 <small>of 15</small></span>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div wrapper>
+		<div checkboxlist>
+		    <h1 choose-head>Are you stressed?</h1>
+			<div checkboxinner>
+				<input type="radio" id="checkbox1"  value="Yes" style="display:none" name="stressed" [(ngModel)]="stressed"/>
+				<label colorbg1 for="checkbox1">Yes  <span checkboxbtn><ion-icon name="checkmark-outline"></ion-icon></span></label>
+			</div>
+			<div checkboxinner>
+				<input type="radio" id="checkbox2"  value="No" checked="true" style="display:none" name="stressed" [(ngModel)]="stressed"/>
+				<label colorbg2 for="checkbox2">No  <span checkboxbtn><ion-icon name="checkmark-outline"></ion-icon></span></label>
+			</div>
+		</div>
+    </div>
+</ion-content>
+<ion-footer>
+  <div gwt-next-foot class="ion-text-center">
+  	 <ion-button shape="round" routerLink="/question17" color="primary">Skip</ion-button>
+    <ion-button  (click)="submit()" shape="round" color="primary">Next</ion-button>
+  </div>
+</ion-footer>

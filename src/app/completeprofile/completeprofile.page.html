@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/login" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Complete Your Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div wrapper>
+    <form>
+      <ion-list lines="none">
+        <div class="labeltxt">Date Of Birth</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-datetime value="2021-10-01T15:43:40.394Z" display-timezone="utc"></ion-datetime>
+          <img src="assets/images/dob.svg" dateTime alt="" />
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Current Weight (kg)</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" (click)="showPicker()" placeholder="Enter Current Weight" autocapitalize="off" required>
+            <img src="assets/images/cw.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Goal Weight (kg)</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" (click)="showPicker()" placeholder="Enter Goal Weight" autocapitalize="off" required>
+            <img src="assets/images/goal.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Your Height (cm)</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" (click)="showPicker()" placeholder="Enter Your Height" autocapitalize="off" required>
+            <img src="assets/images/height.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Basal Metabolic Rate (Percentage)</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" (click)="showPicker()" placeholder="Enter Basal Metabolic Rate"  autocapitalize="off" required>
+            <img src="assets/images/rate.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+  </div>
+  <div bottomBtm class="ion-text-center">
+    <ion-button shape="round" routerLink="profilecomp" color="primary">Next</ion-button>
+  </div>
+</ion-content>

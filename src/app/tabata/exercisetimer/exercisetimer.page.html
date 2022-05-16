@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <!-- <ion-buttons slot="start">
+      <ion-icon routerLink="/tabata/tabatadetails" name="chevron-back-outline"></ion-icon>
+    </ion-buttons> -->
+     <ion-title class="ion-text-center">Be ready ! 
+       <span>Few seconds left in start exercise</span>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/timer.svg');">
+  <div circleProgress>
+    <circle-progress
+    [radius]= 50
+    [space]="-12"
+    [outerStrokeGradient]= true
+    [outerStrokeWidth]= 12
+    [outerStrokeColor]= "'#56BBB3'"
+    [outerStrokeGradientStopColor]= "'#56BBB3'"
+    [innerStrokeColor]= "'#F5F5F5'"
+    [innerStrokeWidth]= 12
+    [outerStrokeLinecap]= "'butt'"
+    [title]= "'02'"
+    [showUnits]= "false"
+    [showSubtitle]= "false"
+    [percent]=30
+    [responsive]="true"
+    [clockwise]="true"
+    [titleFontSize]= "'28'"
+    [titleFontWeight]="'600'"
+    ></circle-progress>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div bottomBtm  routerLink="/tabata/skippingjump" class="ion-text-center">
+    <h3>Next Exercise: <strong>50 x Skipping Jumps</strong></h3>
+  </div>
+</ion-footer>

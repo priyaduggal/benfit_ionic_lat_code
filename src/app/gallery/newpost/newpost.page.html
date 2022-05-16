@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/expertprofile" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center">New Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div wrapper>
+
+  <img *ngIf="errors.indexOf(license_image_url)==-1"
+    [src]="sanitizer.bypassSecurityTrustUrl(license_image_url)"
+   postNew />
+   
+   <video  height="125" *ngIf="errors.indexOf(license_video_url)==-1" controls style="width: 100%;" >
+   <source  [src]="sanitizer.bypassSecurityTrustUrl(license_video_url)" type="video/mp4">
+   </video>
+<label  for="lae-imgs2" class="icon-cy" >
+      
+    <ion-icon name="create"></ion-icon>
+      <input style="visibility:hidden; width:0px; height:0px;" id="lae-imgs2" 
+      (change)="uploadLicense($event,'post')" name="user-img" type="file" >
+      </label>
+
+ 
+    
+    <ion-textarea rows="6" class="ion-no-padding" placeholder="Write a caption..."
+  [(ngModel)]="caption" name="caption"></ion-textarea>
+  </div>
+</ion-content>
+
+
+ 
+<ion-footer>
+  <ion-button (click)="upload()" expand="full" shape="round">UPLOAD</ion-button>
+</ion-footer>

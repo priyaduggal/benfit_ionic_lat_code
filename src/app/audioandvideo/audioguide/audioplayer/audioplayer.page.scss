@@ -1,0 +1,90 @@
+ion-header {
+	padding: 0 15px;
+	position: absolute;
+	--box-shadow: none;
+	ion-toolbar {
+		background-color: transparent;
+		--background: transparent;
+		--border-width: 0;
+		ion-title {
+			color: #fff;
+			font-size: 22px;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+		ion-buttons {
+			position: absolute;
+			ion-icon {
+				font-size: 20px;
+				color: #000;
+			}
+		}
+	}
+}
+
+.header-md::after {
+	background-image: none
+}
+
+ion-content{
+    --background: none;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #fff;
+}
+
+::ng-deep{
+    .audioPlayer
+    {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .wrapper{
+            width: 100% !important;
+            display: flex;
+            flex-direction: column;
+            background-color: transparent !important;
+            .slider{
+                background: #56BCB4 !important;
+            }
+            .cover{
+                margin-bottom: 30px;
+                img{
+                    max-width: 200px !important;
+                    max-height: 200px !important;
+                    object-fit: cover;
+                    margin-left: 0 !important;
+                    border-radius: 5% !important;
+                }
+            }
+            .container{
+                .controls{
+                    width: 100%;
+                    justify-content: center !important;
+                    svg:nth-child(1){
+
+                        display: none !important;
+                    }
+                    svg{
+                        fill:#fff !important
+                    }
+                   
+                }
+                .slidecontainer
+                {
+                    .time-line{
+                        color: #fff !important;
+                    }
+                }
+                .title{
+                    color: #fff !important;
+                    margin-bottom: 30px !important;
+                }
+            }
+        }
+    }
+}

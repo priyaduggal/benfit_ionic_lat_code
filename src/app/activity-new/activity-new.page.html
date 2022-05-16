@@ -1,0 +1,124 @@
+<ion-header [class.show-background]="showToolbar">
+    <ion-toolbar class="py-2" lines="none">
+       <ion-back-button slot="start" defaultHref=""  icon="chevron-back-outline">
+    </ion-back-button >
+        <ion-title slot="start">
+        	<h3 main_heading>Activity</h3>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div wrapper>
+	<div workoutmain_div>
+		<!--h3 main_heading>Activity</h3-->
+		<ion-slides pager="false" [options]="slideOpts">
+			<ion-slide>
+				<div workout_div routerLink="/book-workout">
+					<div inner-st>
+						<img src="assets/images/workout-img.png" />
+					</div>
+					<h3>Workout</h3>
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div workout_div routerLink="/book-workout">
+					<div inner-st>
+						<img src="assets/images/find-expert-icon.png" />
+					</div>
+					<h3>Cardio</h3>
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div workout_div   routerLink="/book-workout">
+					<div inner-st>
+						<img src="assets/images/yoga-icon.png" />
+					</div>
+					<h3>yoga</h3>
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div workout_div routerLink="/book-workout">
+					<div inner-st>
+						<img src="assets/images/workout-img.png" />
+					</div>
+					<h3>book workouts</h3>
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div workout_div  routerLink="/book-workout">
+					<div inner-st>
+						<img src="assets/images/find-expert-icon.png" />
+					</div>
+					<h3>Find expert</h3>
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div workout_div routerLink="/book-workout">
+					<div inner-st>
+						<img src="assets/images/yoga-icon.png" />
+					</div>
+					<h3>Find gym</h3>
+				</div>
+			</ion-slide>
+		</ion-slides>
+	</div>
+	<div activity_step_div>
+		<h2 step_heading>Steps</h2>
+		<ion-item step_div lines="none" detail="false">
+			<ion-label>
+				<h3>6500</h3>
+				<p>3500 steps to your goal</p>
+			</ion-label>
+		</ion-item>	
+	</div>
+	<div activity_step_div>
+		<h2 step_heading>Nutrition</h2>
+		<ion-item step_div lines="none" detail="false">
+			<ion-label>
+				<h3>breakfast</h3>
+				<p>98 kcal</p>
+			</ion-label>
+			<span graph_div slot="end">
+				<img src="assets/images/workout_graph.svg" />
+			</span>
+		</ion-item>	
+		<ion-item step_div lines="none" detail="false">
+			<ion-label>
+				<h3>Lunch</h3>
+			</ion-label>
+			<span graph_div slot="end">
+				<img src="assets/images/workout_graph1.svg" />
+			</span>
+		</ion-item>	
+		<ion-item step_div lines="none" detail="false">
+			<ion-label>
+				<h3>Dinner</h3>
+			</ion-label>
+			<span graph_div slot="end">
+				<img src="assets/images/workout_graph1.svg" />
+			</span>
+		</ion-item>	
+		<ion-item step_div lines="none" detail="false">
+			<ion-label>
+				<h3>Snacks & other</h3>
+				<p>105 kcal</p>
+			</ion-label>
+			<span graph_div slot="end">
+				<img src="assets/images/workout_graph.svg" />
+			</span>
+		</ion-item>	
+	</div>
+	<div activity_step_div>
+		<h2 step_heading>weight</h2>
+		<ion-item step_div lines="none" detail="false">
+			<ion-label>
+				<h3>101 KG</h3>
+				<p>-6 kg to your target weight</p>
+			</ion-label>
+		</ion-item>	
+	</div>
+	<div save_btn_div class="ion-text-center">
+		<ion-button save_btn shape="round">Save</ion-button>
+	</div></div>
+</ion-content>

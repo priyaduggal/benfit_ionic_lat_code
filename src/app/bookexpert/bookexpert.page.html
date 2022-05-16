@@ -1,0 +1,174 @@
+<ion-header [class.show-background]="showToolbar">
+    <ion-toolbar class="py-2" lines="none">
+       <ion-back-button slot="start" defaultHref=""  icon="chevron-back-outline">
+    </ion-back-button >
+       <ion-title slot="start">
+        	<h3 main_heading>Book Expert</h3>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div wrapper>
+        <div calendarbg>
+            <div class="flexCal">
+                <div *ngFor="let wek of week" class="commoncal" [ngClass]="firstday == wek ? 'active' : 'my_class2'" (click)="getmeals(wek)">
+                    <h2>{{getday(wek)}}</h2>
+                    <h3>{{wek| date : ' d'}}</h3>
+                </div>
+            </div>
+            <div time-schedule>
+                <div inner-main><strong>9am</strong> yoga class <span>@homesplace</span></div>
+                <div inner-main><strong>5pm</strong> personal training session with <span>Lucy</span></div>
+            </div>
+        </div>
+        <div book_workout_div>
+			<h3 main_heading>Find your expert</h3>
+			<ion-item book_list lines="none" detail="false">
+				<ion-label>
+				
+					<div date_img_div>
+					<div place_btn_div>
+						<img src="assets/images/img-main.png"/> 
+						<h4>dennis</h4>
+					</div>
+						<div date_div>
+							<h3 date_text>Personal trainer</h3>
+							<ul>
+							<li>- Specialised in Gym Workouts</li><li>- beginner to advanced
+</li><li>- Düsseldorf area</li>
+							</ul>
+					</div>
+					<div place_btn_div bottom-btn>
+						
+						<div book_btn_div>
+							<ion-button book_btn shape="round">Book</ion-button>
+						</div>
+					</div></div>
+				</ion-label>
+			</ion-item>	
+			<ion-item book_list lines="none" detail="false">
+				<ion-label>
+				
+					<div date_img_div>
+					<div place_btn_div>
+						<img src="assets/images/img-main.png"/> 
+						<h4>Kelly</h4>
+					</div>
+						<div date_div>
+							<h3 date_text>Yoga teacher</h3>
+							<ul>
+							<li>- Specialised in yin & hatha yoga
+</li><li>- beginner to advanced
+
+</li><li>- Düsseldorf area (Possible @home)</li>
+							</ul>
+					</div>
+					<div place_btn_div bottom-btn>
+						
+						<div book_btn_div>
+							<ion-button book_btn shape="round">Book</ion-button>
+						</div>
+					</div></div>
+				</ion-label>
+			</ion-item>	
+			<ion-item book_list lines="none" detail="false">
+				<ion-label>
+				
+					<div date_img_div>
+					<div place_btn_div>
+						<img src="assets/images/img-main.png"/> 
+						<h4>Peter</h4>
+					</div>
+						<div date_div>
+							<h3 date_text>Physiotherapist</h3>
+							<ul>
+							<li>- classical physiotherapy 
+</li><li>- sport physiotherapy 
+
+</li><li>- located in Neuss</li>
+							</ul>
+					</div>
+					<div place_btn_div bottom-btn>
+						
+						<div book_btn_div>
+							<ion-button book_btn shape="round">Book</ion-button>
+						</div>
+					</div></div>
+				</ion-label>
+			</ion-item>	
+			<ion-item book_list lines="none" detail="false">
+				<ion-label>
+				
+					<div date_img_div>
+					<div place_btn_div>
+						<img src="assets/images/img-main.png"/> 
+						<h4>jan</h4>
+					</div>
+						<div date_div>
+							<h3 date_text>Nutrition coach </h3>
+							<ul>
+							<li>- Lose weight permanently  
+</li><li>- 12 Weeks Nutrition plan  
+
+</li><li>- online (Possible @home)</li>
+							</ul>
+					</div>
+					<div place_btn_div bottom-btn>
+						
+						<div book_btn_div>
+							<ion-button book_btn shape="round">Book</ion-button>
+						</div>
+					</div></div>
+				</ion-label>
+			</ion-item>	
+			<ion-item book_list lines="none" detail="false">
+				<ion-label>
+				
+					<div date_img_div>
+					<div place_btn_div>
+						<img src="assets/images/img-main.png"/> 
+						<h4>eva</h4>
+					</div>
+						<div date_div>
+							<h3 date_text>Personal trainer</h3>
+							<ul>
+							<li>- Specialised in Gym Workouts</li><li>- beginner to advanced
+</li><li>- online, home & gym</li>
+							</ul>
+					</div>
+					<div place_btn_div bottom-btn>
+						
+						<div book_btn_div>
+							<ion-button book_btn shape="round">Book</ion-button>
+						</div>
+					</div></div>
+				</ion-label>
+			</ion-item>		
+			<ion-item book_list lines="none" detail="false">
+				<ion-label>
+				
+					<div date_img_div>
+					<div place_btn_div>
+						<img src="assets/images/img-main.png"/> 
+						<h4>Peter</h4>
+					</div>
+						<div date_div>
+							<h3 date_text>Running coach</h3>
+							<ul>
+							<li>- Improve running style 
+</li><li>- advanced runners 
+
+</li><li>- Düsseldorf area</li>
+							</ul>
+					</div>
+					<div place_btn_div bottom-btn>
+						
+						<div book_btn_div>
+							<ion-button book_btn shape="round">Book</ion-button>
+						</div>
+					</div></div>
+				</ion-label>
+			</ion-item>				
+        </div> </div>
+</ion-content>

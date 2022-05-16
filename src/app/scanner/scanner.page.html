@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-title class="ion-text-center">
+       SCAN ME
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ngx-qrcode 
+            [elementType]="elementType" 
+            [value]="id"class="qr-scanner" scimg>
+            </ngx-qrcode>
+   <!--img src="assets/images/scanner.png" scimg /-->
+</ion-content>
+
+<ion-footer>
+  <ion-button routerLink="/coupons" shape="round">Done</ion-button>
+</ion-footer>

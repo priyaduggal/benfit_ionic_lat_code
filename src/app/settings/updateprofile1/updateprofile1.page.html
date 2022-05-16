@@ -1,0 +1,393 @@
+<ion-header mode="md">
+  <ion-toolbar class="primary">
+    <ion-back-button
+      slot="start"
+      defaultHref="/settings"
+      text=""
+      icon="chevron-back-outline"
+    ></ion-back-button>
+
+    <!-- <ion-title class="ion-text-center">Add Shipment</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div addshipment>
+    <div stepwizard>
+      <ion-buttons
+        (click)="selectedItem = 'item1'"
+        [ngClass]="{'active': selectedItem === 'item1'}"
+      >
+        <span> 1 </span>
+        <h4>Step</h4>
+      </ion-buttons>
+      <ion-buttons
+        (click)="selectedItem = 'item2'"
+        [ngClass]="{'active': selectedItem === 'item2'}"
+      >
+        <span> 2 </span>
+        <h4>Step</h4>
+      </ion-buttons>
+      <ion-buttons
+        (click)="selectedItem = 'item3'"
+        [ngClass]="{'active': selectedItem === 'item3'}"
+      >
+        <span> 3 </span>
+        <h4>Step</h4>
+      </ion-buttons>
+      <ion-buttons
+        (click)="selectedItem = 'item4'"
+        [ngClass]="{'active': selectedItem === 'item4'}"
+      >
+        <span> 4 </span>
+        <h4>Step</h4>
+      </ion-buttons>
+    </div>
+    <div stepform1 location [ngClass]="{'active': selectedItem === 'item1'}">
+      <div commonBox>
+        <ion-list lines="none">
+          <div class="labeltxt">Current Weight (kg)</div>
+          <ion-item lines="none" class="ion-no-padding">
+               <img slot="start" src="assets/images/cw.svg" alt="" />
+            <ion-input
+              type="text"
+              placeholder="Enter Current Weight"
+              autocapitalize="off"
+              [(ngModel)]="current_weight"
+              name="current_weight"
+            >
+           
+            </ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-list lines="none">
+          <div class="labeltxt">Goal Weight (kg)</div>
+          <ion-item lines="none" class="ion-no-padding">
+                  <img slot="start" src="assets/images/goal.svg" alt="" />
+            <ion-input
+              type="text"
+              [(ngModel)]="goal_weight"
+              name="goal_weight"
+              placeholder="Enter Goal Weight"
+              autocapitalize="off"
+              required
+            >
+        
+            </ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-list lines="none">
+          <div class="labeltxt">Your Height (cm)</div>
+          <ion-item lines="none" class="ion-no-padding">
+              <img slot="start" src="assets/images/height.svg" alt="" />
+            <ion-input
+              type="text"
+              placeholder="Enter Your Height"
+              [(ngModel)]="height"
+              name="height"
+              autocapitalize="off"
+              required
+            >
+            
+            </ion-input>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div footerStep>
+        <ion-button
+          btn-submit
+          (click)="nextStep()"
+          color="primary"
+          shape="round"
+          expand="full"
+        >
+          Next
+        </ion-button>
+      </div>
+    </div>
+    <div stepform2 details [ngClass]="{'active': selectedItem === 'item2'}">
+      <div commonBox pt20>
+        <!--ion-list lines="none">
+          <div class="labeltxt">Basal Metabolic Rate (Percentage)</div>
+          <ion-item lines="none" class="ion-no-padding">
+            <ion-input
+              type="text"
+              placeholder="Enter Basal Metabolic Rate"
+              autocapitalize="off"
+              [(ngModel)]="metabolic_rate"
+              name="metabolic_rate"
+            >
+              <img src="assets/images/rate.svg" alt="" />
+            </ion-input>
+          </ion-item>
+        </ion-list-->
+
+        <ion-list lines="none">
+          <div class="labeltxt">Hours of sleep per night</div>
+            <ion-item lines="none" class="ion-no-padding">
+            <img slot="start" src="assets/images/cicon1.svg" alt="" />
+            <ion-select value="" okText="Okay" cancelText="Dismiss" name="hours_of_sleep" [(ngModel)]="hours_of_sleep">
+            <ion-select-option value="{{hour}}" *ngFor="let hour of hours">{{hour}}</ion-select-option>
+            </ion-select>
+            
+          </ion-item>
+        </ion-list>
+        <ion-list lines="none"> 
+          <div class="labeltxt">How's your physical condition?</div>
+          <ion-item lines="none" class="ion-no-padding">
+                <img slot="start" src="assets/images/cicon2.svg" alt="" />
+             <ion-select value="" okText="Okay" cancelText="Dismiss" name="physical_condition" [(ngModel)]="physical_condition">
+            <ion-select-option value="{{condition}}" *ngFor="let condition of conditions">{{condition}}</ion-select-option>
+            </ion-select>
+          
+            
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div footerStep>
+        <ion-button
+          btn-submit
+          (click)="nextStep1()"
+          color="primary"
+          shape="round"
+          expand="full"
+        >
+          Next
+        </ion-button>
+      </div>
+    </div>
+    <div stepform3 payments [ngClass]="{'active': selectedItem === 'item3'}">
+      <div commonBox1>
+        <ion-list lines="none">
+          <div class="labeltxt">How often do you exercise per week?</div>
+          <ion-item lines="none" class="ion-no-padding">
+              <img slot="start" src="assets/images/cicon3.svg" alt="" />
+             <ion-select value="" okText="Okay" cancelText="Dismiss" name="exercise_often" [(ngModel)]="exercise_often">
+            <ion-select-option value="{{condition}}" *ngFor="let condition of oftens">{{condition}}</ion-select-option>
+            </ion-select>
+            <ion-input
+              type="text"
+              placeholder="Type here..."
+              [(ngModel)]="exercise_often"
+              name="exercise_often"
+              autocapitalize="off"
+              required
+            >
+             
+            </ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <div class="labeltxt">
+            Your physical activities in (work) everyday life?
+          </div>
+        <ion-item class="ion-no-padding" lines="none">
+             <img slot="start" src="assets/images/cicon4.svg" dateTime alt="" />
+            <ion-select
+              placeholder=""
+              name="physical_activity" [(ngModel)]="physical_activity"
+            >
+              <ion-select-option value="Sitting Only">Sitting Only</ion-select-option>
+            <ion-select-option value="Standing Only">Standing Only</ion-select-option>
+            <ion-select-option value="Standing and Sitting">Standing and Sitting</ion-select-option>
+            </ion-select>
+         
+          </ion-item> 
+
+
+
+
+  
+
+
+          <!--div aimCon class="active">
+            <div aimBox>
+              <h2>Xyz</h2>
+              <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+            </div>
+          </div-->
+          <!--div aimCon>
+            <div aimBox>
+              <h2>Xyz</h2>
+              <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+            </div>
+          </div-->
+        </ion-list>
+        <ion-list>
+          <div class="labeltxt">Favourite Sports</div>
+
+          <ion-item lines="none" class="ion-no-padding">
+         <ion-select placeholder="Select " name="fav_sports" [(ngModel)]="fav_sports">
+          <ion-select-option value="{{sport}}"   *ngFor="let sport of sports">{{sport}}</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+          <!-- <ion-item class="ion-no-padding" lines="none">
+            <ion-select
+              placeholder="Fitness"
+              name="fav_sports"
+            >
+              <ion-select-option value="f">Fitness</ion-select-option>
+              <ion-select-option value="m">Fitness 1</ion-select-option>
+            </ion-select>
+            <img src="assets/images/cicon5.svg" dateTime alt="" />
+          </ion-item> -->
+          <!--div aimCon class="active">
+            <div aimBox>
+              <h2>Fitness</h2>
+              <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+            </div>
+          </div>
+          <div aimCon>
+            <div aimBox>
+              <h2>Fitness 1</h2>
+              <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+            </div>
+          </div-->
+        </ion-list>
+        <!--ion-list upInput>
+          <div class="labeltxt">Are you vegetarian or vegan?</div>
+          <ion-row>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start" name="preferences"></ion-checkbox>
+                <ion-label>Vegetarian</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start" name="preferences"></ion-checkbox>
+                <ion-label>Vegan</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-list-->
+
+      </div>
+
+      <div footerStep>
+        <ion-button
+          btn-submit
+          (click)="nextStep2()"
+          color="primary"
+          shape="round"
+          expand="full"
+        >
+          Next
+        </ion-button>
+      </div>
+    </div>
+    <div stepform4 preview [ngClass]="{'active': selectedItem === 'item4'}">
+      <div commonBox1>
+        <ion-list>
+          <div class="labeltxt">
+            Do you suffer from any of the following diseases or intolerances?
+          </div>
+          <ion-item class="ion-no-padding" lines="none">
+              <img slot="start" src="assets/images/cicon6.svg" dateTime alt="" />
+            <ion-select placeholder="Select"  name="disease" [(ngModel)]="disease">
+          <ion-select-option value="Kidney disease">Kidney disease</ion-select-option>
+          <ion-select-option value="Heart disease">Heart disease</ion-select-option>
+        </ion-select>
+          
+          </ion-item> 
+          <!--div aimCon class="active">
+            <div aimBox>
+              <h2>Kidney disease</h2>
+              <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+            </div>
+          </div>
+          <div aimCon>
+            <div aimBox>
+              <h2>Kidney disease 1</h2>
+              <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+            </div>
+          </div-->
+        </ion-list>
+        <ion-list lines="none" >
+          <div class="labeltxt">What foods do you not like?</div>
+          <ion-item lines="none" class="ion-no-padding">
+              <img slot="start" src="assets/images/cicon7.svg" alt="" />
+            <ion-input type="text" placeholder="Type here..." autocapitalize="off" name="foods_like" [(ngModel)]="foods_like">
+            
+            </ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-list upInput>
+           <div wrapper>
+    <div checkboxlist>
+       <div class="labeltxt">Are you stressed?</div>
+       
+      <div checkboxinner>
+        <input type="radio" id="checkbox1"  value="Yes" style="display:none" name="stressed" [(ngModel)]="stressed"/>
+        <label colorbg1 for="checkbox1">Yes  <span checkboxbtn><ion-icon name="checkmark-outline"></ion-icon></span></label>
+      </div>
+      <div checkboxinner>
+        <input type="radio" id="checkbox2"  value="No" checked="true" style="display:none" name="stressed" [(ngModel)]="stressed"/>
+        <label colorbg2 for="checkbox2">No  <span checkboxbtn><ion-icon name="checkmark-outline"></ion-icon></span></label>
+      </div>
+    </div>
+    </div>
+            <!--ion-row>{{stressed}}
+              <ion-col size="4">
+                <ion-item class="ion-no-padding" lines="none">
+                  <ion-checkbox slot="start" value="Yes"name="stressed" [(ngModel)]="stressed"></ion-checkbox>
+                  <ion-label>Yes</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item class="ion-no-padding" lines="none">
+                  <ion-checkbox slot="start" value="No" name="stressed" [(ngModel)]="stressed"></ion-checkbox>
+                  <ion-label>No</ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row-->
+        </ion-list>
+        <ion-list upInput>
+          <div wrapper>
+    <div checkboxlist>
+         <div class="labeltxt">Do you want to be personally motivated?</div>
+      <div checkboxinner>
+        <input type="radio" id="checkbox1"  name="checkbox"  value="Yes" style="display:none"  name="motivated" [(ngModel)]="motivated"/>
+        <label colorbg1 for="checkbox1">Yes  <span checkboxbtn><ion-icon name="checkmark-outline"></ion-icon></span></label>
+      </div>
+      <div checkboxinner>
+        <input type="radio" id="checkbox2"  name="checkbox"  value="No" style="display:none"  name="motivated" [(ngModel)]="motivated"/>
+        <label colorbg2 for="checkbox2">No  <span checkboxbtn><ion-icon name="checkmark-outline"></ion-icon></span></label>
+      </div>
+    </div>
+    </div>
+            <!--ion-row>
+              <ion-col size="4">
+                <ion-item class="ion-no-padding" lines="none">
+                  <ion-checkbox slot="start"  value="Yes"   name="motivated" [(ngModel)]="motivated"></ion-checkbox>
+                  <ion-label>Yes</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item class="ion-no-padding" lines="none">
+                  <ion-checkbox slot="start" value="No"   name="motivated" [(ngModel)]="motivated"></ion-checkbox>
+                  <ion-label>No</ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row-->
+        </ion-list>
+      </div>
+
+      <div footerStep>
+        <ion-button
+         (click)="submit()"
+          btn-submit
+          color="primary"
+          shape="round"
+          expand="full"
+        >
+          Finish
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

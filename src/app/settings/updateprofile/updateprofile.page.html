@@ -1,0 +1,209 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/tabs/settings" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">Update Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div profileBox>
+    <ion-thumbnail>
+      <img src="assets/images/userimg.jpg">
+    </ion-thumbnail>
+    <p>Change Profile Picture</p>
+  </div>
+  <div wrapper>
+    <form>
+      <ion-list lines="none">
+        <div class="labeltxt">First Name</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text"  [(ngModel)]="first_name" name="first_name" autocapitalize="off" required></ion-input>
+        </ion-item>
+      </ion-list>
+
+       <ion-list lines="none">
+        <div class="labeltxt">Last Name</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text"  [(ngModel)]="last_name" name="last_name" autocapitalize="off" required></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Email Address</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text"  [(ngModel)]="email" name="email"  autocapitalize="off" required></ion-input>
+          <span changeColor routerLink="/settings/changeemail">Change</span>
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Date Of Birth</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-datetime [(ngModel)]="date_of_birth" name="date_of_birth" display-timezone="utc"></ion-datetime>
+          <img src="assets/images/dob.svg" dateTime alt="" />
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Current Weight (kg)</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Enter Current Weight"
+           [(ngModel)]="current_weight" name="current_weight"  autocapitalize="off" required>
+            <img src="assets/images/cw.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Goal Weight (kg)</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text"  [(ngModel)]="goal_weight" name="goal_weight"  placeholder="Enter Goal Weight" autocapitalize="off" required>
+            <img src="assets/images/goal.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Your Height (cm)</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Enter Your Height"  [(ngModel)]="height" name="height" autocapitalize="off" required>
+            <img src="assets/images/height.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Basal Metabolic Rate (Percentage)</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Enter Basal Metabolic Rate"  autocapitalize="off"  [(ngModel)]="metabolic_rate" name="metabolic_rate">
+            <img src="assets/images/rate.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+
+      <hr />
+
+      <ion-list lines="none">
+        <div class="labeltxt">Hours of sleep per night</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Type here..."  [(ngModel)]="hours_of_sleep" name="hours_of_sleep" autocapitalize="off" required>
+            <img src="assets/images/cicon1.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list lines="none">
+        <div class="labeltxt">How's your physical condition?</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Type here..."  [(ngModel)]="physical_condition" name="physical_condition"autocapitalize="off" required>
+            <img src="assets/images/cicon2.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list lines="none">
+        <div class="labeltxt">How often do you exercise per week?</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Type here..."  [(ngModel)]="exercise_often" name="exercise_often"autocapitalize="off" required>
+            <img src="assets/images/cicon3.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <div class="labeltxt">Your physical activities in (work) everyday life?</div>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-select placeholder="Sitting only" [(ngModel)]="physical_activity" name="physical_activity">
+            <ion-select-option value="f">Xyz</ion-select-option>
+            <ion-select-option value="m">Xyz 1</ion-select-option>
+          </ion-select>
+          <img src="assets/images/cicon4.svg" dateTime alt="" />
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <div class="labeltxt">Favourite Sports</div>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-select placeholder="Fitness" [(ngModel)]="fav_sports" name="fav_sports">
+            <ion-select-option value="f">Fitness</ion-select-option>
+            <ion-select-option value="m">Fitness 1</ion-select-option>
+          </ion-select>
+          <img src="assets/images/cicon5.svg" dateTime alt="" />
+        </ion-item>
+      </ion-list>
+      <ion-list upInput>
+        <div class="labeltxt">Are you vegetarian or vegan?</div>
+          <ion-row>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start"  [(ngModel)]="preferences" name="preferences"></ion-checkbox>
+                <ion-label>Vegetarian</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start"  [(ngModel)]="preferences" name="preferences"></ion-checkbox>
+                <ion-label>Vegan</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+      </ion-list>
+      <ion-list>
+        <div class="labeltxt">Do you suffer from any of the following diseases or intolerances?</div>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-select placeholder=""  [(ngModel)]="disease" name="disease">
+            <ion-select-option value="Heart disease">Kidney disease</ion-select-option>
+            <ion-select-option value="m">Kidney disease 1</ion-select-option>
+          </ion-select>
+          <img src="assets/images/cicon6.svg" dateTime alt="" />
+        </ion-item>
+      </ion-list>
+      <ion-list lines="none" >
+        <div class="labeltxt">What foods do you not like?</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Type here..." autocapitalize="off"  [(ngModel)]="foods_like" name="foods_like">
+            <img src="assets/images/cicon7.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list upInput>
+        <div class="labeltxt">Are you stressed?</div>
+          <ion-row>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start" value="Yes" [(ngModel)]="stressed" name="stressed"></ion-checkbox>
+                <ion-label>Yes</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start" value="No" [(ngModel)]="stressed" name="stressed"></ion-checkbox>
+                <ion-label>No</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+      </ion-list>
+      <ion-list upInput>
+        <div class="labeltxt">Do you want to be personally motivated?</div>
+          <ion-row>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start"  value="Yes" [(ngModel)]="motivated" name="motivated"></ion-checkbox>
+                <ion-label>Yes</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start" value="No" [(ngModel)]="motivated" name="motivated"></ion-checkbox>
+                <ion-label>No</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+      </ion-list>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div bottomBtm class="ion-text-center">
+    <ion-button shape="round" color="primary" (click)="save()">Save</ion-button>
+  </div>
+</ion-footer>

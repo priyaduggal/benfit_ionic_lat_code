@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/completeprofile/uploadphoto" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center">What ‘s your Aim?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div wrapper>
+    <p class="pHeader">Complete Your Personal Fitness Profile</p>
+    <div aimCon yellowBg (click)="showInput1('Lose')" class="mt30 active">
+      <div aimBox>
+        <h2>Lose Weight</h2>
+        <img src="assets/images/loseweight.png" />
+      </div>
+    </div>
+     <div inputDiv  class="Lose typed"  style="display: none;">
+        <ion-input type="text" placeholder="Type here..." autocapitalize="off"  name="aim_explain" [(ngModel)]="aim_explain"></ion-input>
+      </div>
+    <div aimCon (click)="showInput1('Build')" >
+      <div aimBox>
+        <h2>Build Muscle</h2>
+        <img src="assets/images/bmc.png" bmc />
+      </div>
+    </div>
+         <div inputDiv   class="Build typed" style="display: none;">
+        <ion-input type="text" placeholder="Type here..." autocapitalize="off"  name="aim_explain" [(ngModel)]="aim_explain"></ion-input>
+      </div>
+    <div aimCon (click)="showInput1('Stay')">
+      <div aimBox>
+        <h2>Stay As You Are</h2>
+        <img src="assets/images/staybg.png" bmc />
+      </div>
+    </div>
+  <div inputDiv  class="Stay  typed" style="display: none;">
+        <ion-input type="text" placeholder="Type here..." autocapitalize="off"  name="aim_explain" [(ngModel)]="aim_explain"></ion-input>
+  </div>
+
+  <span error *ngIf="errors.indexOf(aim_type)>=0 && is_submit_signup == true ">Please select your aim</span>
+  <span error *ngIf="errors.indexOf(aim_explain)>=0 && is_submit_signup == true ">Please enter aim explanation</span>
+
+    <div bottomBtm class="ion-text-center">
+       <ion-button shape="round" class="skipbtn" routerLink="/activitylevel" color="primary">Skip</ion-button>
+      <ion-button shape="round" (click)="submit()" color="primary">Submit</ion-button>
+    </div>
+  </div>
+
+</ion-content>

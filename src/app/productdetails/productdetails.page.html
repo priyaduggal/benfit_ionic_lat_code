@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/products" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">Product Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let image of images">
+        <img src="{{IMAGES_URL}}/{{image}}" />
+      </ion-slide>
+    </ion-slides>
+    <div sliderContent>
+      <div sHeading>
+        <h2>{{details?.title}}</h2>
+        <span *ngIf="types?.length>0" [ngClass]="details?.discount > 0 ? 'my_class1' : 'my_class2'">
+          <span id="tprice">${{types[0]?.price}}</span>
+        .00</span>
+
+          <span *ngIf="types?.length>0 && details?.discount>0">
+          <span id="tprice">${{getorprice(types[0]?.price,details?.discount)}}</span></span>
+
+
+      </div>
+      <div sDesc myb>
+        <h3>Description</h3>
+        <p>{{details?.Description}}</p>
+      </div>
+      <div sDesc myb>
+        <h3>Type</h3>
+        <ion-row>
+          <ion-col size="4" *ngFor="let type of types;let i=index">
+            <label>
+              <input type="radio"  name="product"  class="card-input-element" 
+              value="{{type?.id}}" [checked]="(i==0) ? true : false"  (click)="showprice(type?.id)"/>
+              <div class="panel panel-default card-input ion-text-center">
+                <div class="panel-heading">{{type?.name}}</div>
+              </div>
+            </label>
+          </ion-col>
+    </ion-row>
+      </div>
+      <div sDesc myb>
+        <h3>Quantity</h3>
+        <div quanityIncDec>
+          <ion-icon name="remove" (click)="decrement()"></ion-icon>
+            <span>{{currentNumber}}</span>
+          <ion-icon name="add" (click)="increment()"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div bottomBtm class="ion-text-center">
+      <ion-button shape="round" expand="full" (click)="addtocart()" color="primary">Add To Cart</ion-button>
+    </div>
+  </div>
+</ion-content>

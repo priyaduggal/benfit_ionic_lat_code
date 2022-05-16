@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/orders" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">ORDER DETAILS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <div totalDetails>
+      <p>
+        <span class="fontsize">Order Id:{{details?.id}}</span>
+        <span style="color: #828282;">02-02-2021</span>
+      </p>
+      <p>
+        <span>Tracking no.: <strong>UD{{details?.id}}{{details?.id}}</strong></span>
+      </p>
+      <p>
+        <span>Quantity: <strong>{{details?.quantity}}</strong></span>
+        <span class="deliverd" *ngIf="details?.status==0">Pending</span>
+      </p>
+    </div>
+
+    <div padBox>
+      <ion-thumbnail>
+        <img src="{{showimage(details?.images)}}" *ngIf="errors.indexOf(details?.res_id)>=0"/>
+         <img src="{{IMAGES_URL}}/{{details?.image}}" *ngIf="errors.indexOf(details?.res_id)==-1"/>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category *ngIf="errors.indexOf(details?.res_id)>=0"> <span>{{details?.title}}</span> </p>
+
+         <p class="mt-0" category *ngIf="errors.indexOf(details?.res_id)==-1"> <span>{{details?.name}}</span> </p>
+
+        <p pricePro>
+        <span  *ngIf="errors.indexOf(details?.res_id)>=0 && details?.discount>0">${{getorprice(details?.price,details?.discount)}}</span>
+          <span  *ngIf="errors.indexOf(details?.res_id)>=0 && details?.discount==0">${{details?.price}}.00</span>
+        <span  *ngIf="errors.indexOf(details?.res_id)==-1">${{details?.rprice}}.00</span></p>
+      </ion-label>
+    </div>
+   
+    <div sHeading><h2>Payment</h2></div>
+    <div totalDetails>
+      <p>
+        <span>Shipping Address:</span>
+        <span>3 Newbridge Court ,Chino Hills, 
+          CA 91709, United States</span>
+      </p>
+      <p>
+        <span>Payment method:</span>
+        <span>{{details?.payment_method}}</span>
+      </p>
+      <p>
+        <span>Total Amount:</span>
+        <span *ngIf="errors.indexOf(details?.res_id)>=0 && details?.discount>0">${{getorprice(details?.price,details?.discount) * details?.quantity}}</span>
+
+         <span *ngIf="errors.indexOf(details?.res_id)>=0 && details?.discount==0">${{details?.price * details?.quantity}}</span>
+         
+         <span *ngIf="errors.indexOf(details?.res_id)==-1">${{details?.rprice * details?.quantity}}</span>
+      </p>
+    </div>
+
+  </div>
+</ion-content>

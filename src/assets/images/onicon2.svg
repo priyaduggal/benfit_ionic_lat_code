@@ -1,0 +1,21 @@
+<svg width="245" height="245" viewBox="0 0 245 245" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="122.5" cy="122.5" r="122.5" fill="#FF7ABB"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="245" height="245">
+<circle cx="122.5" cy="122.5" r="122.5" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="-11.6667" y="171.889" width="259.778" height="97.2222" fill="#D7498E"/>
+<circle cx="220.889" cy="66.8887" r="27.2222" fill="#FF96C9" fill-opacity="0.7"/>
+<circle cx="67.6666" cy="25.6666" r="103.444" fill="#FF96C9"/>
+<ellipse cx="143.889" cy="197.556" rx="68.4444" ry="5.44444" fill="#C4156A"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M65.3333 87.8887H129.889L120.485 198.333C120.485 198.333 107.881 199.889 97.611 199.889C87.3408 199.889 74.7373 198.333 74.7373 198.333L65.3333 87.8887Z" fill="#EDF9FF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M97.6111 87.8887H129.889L120.485 198.333C120.485 198.333 114.766 198.722 109.048 199.111C103.33 199.5 97.6111 199.889 97.6111 199.889V87.8887Z" fill="#DCE7ED"/>
+<rect x="61.4443" y="83.2222" width="73.1111" height="6.22222" fill="#872F6D"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M70.7779 74.6665H125.222L128.333 83.2221H67.6667L70.7779 74.6665Z" fill="#CC54AA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M98 74.6665H125.222L128.333 83.2221H98V74.6665Z" fill="#B83D94"/>
+<ellipse cx="153.106" cy="120.013" rx="7.72993" ry="14.601" transform="rotate(45 153.106 120.013)" fill="#138E50"/>
+<ellipse cx="141.167" cy="164.111" rx="38.5" ry="38.8889" transform="rotate(-45 141.167 164.111)" fill="#5DD49D"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M165.287 134.093C173.881 148.927 171.915 168.139 159.332 180.721C145.283 194.77 122.971 195.584 107.714 183.241C109.389 186.132 111.466 188.857 113.943 191.335C129.13 206.522 153.63 206.645 168.665 191.61C183.701 176.575 183.578 152.075 168.39 136.888C167.394 135.891 166.358 134.96 165.287 134.093Z" fill="#38C684"/>
+<rect x="139.222" y="122.889" width="5.44444" height="13.2222" rx="2.72222" fill="#4A3A1F"/>
+</g>
+</svg>

@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+	  <ion-back-button slot="start" defaultHref="/chooseworkout/workoutvideos/{{details?.cat_id}}"  icon="chevron-back-outline">
+    </ion-back-button >
+     <ion-title class="ion-text-center">{{details?.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div class="vBox">
+<!--div id="video">
+    <div id="counter"></div>      
+</div-->
+<div class="video">
+<div id="instructions">
+      <video id="my_video_1" class="video-js vjs-default-skin" width="100%" height="" controls preload="none"
+      poster='{{IMAGES_URL}}/{{details?.thumbnail_image}}'
+      >
+      <source src="{{IMAGES_URL}}/{{details?.video}}" type='video/mp4' />
+      <source src="{{IMAGES_URL}}/{{details?.video}}" type='video/webm' />
+      </video>
+      <button (click)="playPause()">Play/Pause</button>
+      <button (click)="makeBig()">Big</button>
+      <button (click)="makeSmall()">Small</button>
+      <button (click)="makeNormal()">Normal</button>
+      <button (click)="restart();">Restart</button>
+      <button (click)="skip(-10)">Rewind</button>
+      <button (click)="skip(10)">Fastforward</button>
+      </div>
+      </div>
+      </div>
+  <div wrapper>
+    <p>{{details?.description}}</p>
+
+    <h2>Workout Details</h2>
+    <ul>
+      <li>
+        <span text>Duration</span>
+        <span contAiner>{{details?.duration}} Minutes</span>
+      </li>
+      <li>
+        <span text>Calorie Burn</span>
+        <span contAiner>{{details?.calories_burn}}</span>
+      </li>
+      <li>
+        <span text>Difficulty</span>
+        <span contAiner>{{details?.difficulty}}</span>
+      </li>
+      <li>
+        <span text>Equipment</span>
+        <span contAiner>{{details?.equipment}}</span>
+      </li>
+      <li>
+        <span text>Training Type</span>
+        <span contAiner>{{details?.training_type}}</span>
+      </li>
+    </ul>
+    <div class="blog-post" [innerHtml]="details?.instructions"></div>
+
+    <!--h2>Warm-Up: 30 sec each, no rest, 7:00 total</h2>
+    <div contentPara>
+      <p> - Boxer’s Shuffle </p>
+      <p> - Squat + Knee Drives (alternating) </p>
+      <p> - Jump Rope + Fast Feet </p>
+      <p> - Traveling Inchworm </p>
+      <p> - Spider-Man Mountain Climbers (slow) </p>
+      <p> - Jab-Cross – R </p>
+      <p> - Hook-Uppercut – R</p>
+      <p> - Front Kick-Sidekick – R</p>
+      <p> - Zombie March Kicks </p>
+      <p> - Jab-Cross – L</p>
+      <p> - Hook-Uppercut – L </p>
+      <p> - Front Kick-Sidekick – L </p>
+      <p> - Traveling Bob-and-Weave </p>
+      <p> - Double Clap Jacks </p>
+    </div>
+
+    <h2>Kickboxing Circuits</h2>
+    <div contentPara>
+      <p> - Move 1 = Combo </p>
+      <p> - Move 2 = Cardio </p>
+      <p> - Move 3 = Strength </p>
+    </div>
+
+    <p><strong>*Note</strong>: Leading side will start on the Right for each combo. Switch to a Left lead for the second round.  </p>
+
+    <h2>Circuit #1:</h2>
+    <div contentPara>
+      <p> - Double-Jab + 1 Cross + Duck/Squat + Sidekick (front leg)  </p>
+      <p> - Squat Thrust + Knee Drive and Front Kick (alternating) </p>
+      <p> - Low + High Sidekick (Stabilization-keep leg lifted between  kicks)  </p>
+    </div>
+
+    <h2>Circuit #2:</h2>
+    <div contentPara>
+      <p> - Hook + Elbow Strike (strike behind) + Uppercut + 2 Jacks  (back to set position)  </p>
+      <p> - Plank Jacks + Elbow Strikes (strike when feet jump apart) </p>
+      <p> - Reverse + Curtsy Lunge Pivot </p>
+    </div>
+
+    <h2>Circuit #3:</h2>
+    <div contentPara>
+      <p> - Horse Stance: 2 Jabs + 2 Crosses + Lateral Shuffle in between punches  </p>
+      <p> - Jabs + Travel Jacks (alternating jabs, jacks travel forward and back) </p>
+      <p> - Reverse Lunge + Knee Raise / Reverse Lunge + Front Kick (alternating) </p>
+    </div>
+
+    <h2>Warm-Up: 30 sec each, no rest, 7:00 total</h2>
+    <div contentPara mb10>
+      <p> - Quads Stretch – R </p>
+      <p> - Hamstrings Stretch – R</p>
+      <p> - Figure 4 Stretch – R </p>
+      <p> - Lateral Lunge Inner Thigh/Glutes Stretch – Step out R </p>
+      <p> - Quads Stretch – L </p>
+      <p> - Hamstrings Stretch – L </p>
+      <p> - Figure 4 Stretch – L </p>
+      <p> - Lateral Lunge Inner Thigh/Glutes Stretch – Step out L </p>
+      <p> - Crossbody Shoulder Stretch – R </p>
+      <p> - Overhead Triceps Stretch – R </p>
+      <p> - Crossbody Shoulder Stretch – L </p>
+      <p> - Overhead Triceps Stretch – L </p>
+      <p> - Hands Overhead: Obliques/Lats Stretch - R </p>
+      <p> - Hands Overhead: Obliques/Lats Stretch – L </p>
+      <p> - Alternating Tree Hug/Chest Opener </p>
+    </div--->
+  </div>
+</ion-content>

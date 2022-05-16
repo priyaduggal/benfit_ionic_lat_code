@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+     <ion-back-button slot="start" defaultHref="/tabs/settings"  icon="chevron-back-outline">
+    </ion-back-button >
+     <ion-title class="ion-text-center">Choose Workouts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div wrapper>
+    <ion-row>
+      <p *ngIf="workouts?.length==0">No records found!!</p>
+      <ion-col size="6"   *ngFor="let workout of workouts">
+        <div workOut routerLink="workoutvideos/{{workout?.id}}">
+          <label>
+            <div class="panel panel-default card-input ion-text-center" 
+            style="background-image: url('{{IMAGES_URL}}/{{workout?.image}}');">
+              <div class="panel-body">
+                <h3>{{workout?.name}}</h3>
+              </div>
+            </div>
+          </label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

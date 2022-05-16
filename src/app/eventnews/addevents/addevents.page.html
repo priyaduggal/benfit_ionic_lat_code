@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/eventnews" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">Add Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <form>
+      <ion-list lines="none">
+        <div class="labeltxt">Title</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" value="Quisquam Event" autocapitalize="off"  [(ngModel)]="title"
+          name="title"></ion-input>
+        </ion-item>
+            <span error *ngIf="errors.indexOf(title) >= 0 && is_submit_login == true">Please enter title</span>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Description</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-textarea rows="5"  [(ngModel)]="description"
+          name="description"></ion-textarea>
+        </ion-item>
+            <span error *ngIf="errors.indexOf(description) >= 0 && is_submit_login == true">Please enter description</span>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Event Location</div>
+        <ion-item lines="none" class="ion-no-padding">
+           <input class="flstd" ngx-google-places-autocomplete [options]='options'placeholder="LOCATION"
+        [(ngModel)]="location" name="location"  (onAddressChange)="handleAddressChange($event)"/>
+        </ion-item>
+        <span error *ngIf="errors.indexOf(location) >= 0 && is_submit_login == true">Please enter location</span>
+      </ion-list>
+
+      <div class="labeltxt p15"><div class="labeltxt">Event Location</div></div>
+      <ion-row>
+        <ion-col size="6" class="pl0">
+          <ion-list lines="none">
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-datetime value="2019-10-01T15:43:40.394Z"   [(ngModel)]="ev_date"   name="ev_date" display-timezone="utc"></ion-datetime>
+              <img slot="end" src="assets/images/calander.svg" />
+            </ion-item>
+               <span error *ngIf="errors.indexOf(ev_date) >= 0 && is_submit_login == true">Please enter date</span>
+          </ion-list>
+        </ion-col>
+        <ion-col size="6" class="pr0">
+          <ion-list lines="none">
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-datetime displayFormat="h:mm a" pickerFormat="h:mm:A" [(ngModel)]="ev_time"   name="ev_time" ></ion-datetime>
+              <img slot="end" src="assets/images/times.svg" />
+            </ion-item>
+             <span error *ngIf="errors.indexOf(ev_time) >= 0 && is_submit_login == true">Please enter time</span>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-list lines="none" uploadList>
+        <ion-item lines="none" class="ion-no-padding">
+          <div class="newfileupload">
+            <label for="fupload" class="fileupld">Enter</label>
+           <input type="file" id="fupload"  class="file-upload"
+            (change)="uploadimage($event)">
+        </div>
+         </ion-item>
+       <img *ngIf="is_license_uploaded == true" style="width:125px;height:125px;" 
+      [src]="sanitizer.bypassSecurityTrustUrl(license_image_url)"
+      class="table-user rounded-circle img-thumbnail"  >
+      <span error *ngIf="errors.indexOf(license_file) >= 0 && is_submit_login == true">Please add image </span>
+      </ion-list>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div bottomBtm class="ion-text-center">
+    <ion-button shape="round" (click)="addevent()" color="primary">Add Event</ion-button>
+  </div>
+</ion-footer>

@@ -1,0 +1,39 @@
+<ion-header [class.show-background]="showToolbar">
+<ion-title slot="start">
+</ion-title>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+    <div wrapper>
+        <div calendarbg class="" style="">
+            <div class="flexCal">
+                <div *ngFor="let wek of week" class="commoncal" [ngClass]="firstday == wek ? 'active' : 'my_class2'" (click)="getmeals(wek)">
+                    <h2>{{getday(wek)}}</h2>
+                    <h3>{{wek| date : ' d'}}</h3>
+                </div>
+            </div>
+            <div time-schedule>
+                <div inner-main><strong>9am</strong> yoga class <span>@homesplace</span></div>
+                <div inner-main><strong>5pm</strong> personal training session with <span>Lucy</span></div>
+            </div>
+        </div>
+		
+	<ion-item>
+  <ion-label>
+  <div main-df>
+  Courses
+	<ion-button shape="round">View</ion-button>
+</div>
+  </ion-label>
+</ion-item><ion-item>
+  <ion-label>
+  <div main-df>
+ Free Workout
+	<ion-button shape="round">Book</ion-button>
+</div>
+  </ion-label>
+</ion-item>
+
+		</div>
+
+</ion-content>

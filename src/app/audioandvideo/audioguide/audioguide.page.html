@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/audioandvideo" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">Audio Guides</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <div audioBox>
+      <ion-row>
+        <p *ngIf="audios.length==0">Audio's not found</p>
+        <ion-col size="6" *ngFor="let vid of audios">
+          <div audioCon (click)="view(vid?.id)">
+            <img src="assets/images/iconsong.svg" />
+            <h3>{{vid?.title}}</h3>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

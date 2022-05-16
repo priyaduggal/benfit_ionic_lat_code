@@ -1,0 +1,62 @@
+<ion-content>
+  <!-- End Circle Img -->
+  <div login>
+    <form>
+      <div class="ion-text-center">
+	  <img class="logs" src="assets/images/benfit_logo.png">
+      </div>
+	 
+      <ion-list lines="none">
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" name="first_name" placeholder="Enter First Name"  [(ngModel)]="first_name" >
+          </ion-input>
+        </ion-item>
+		 <span error *ngIf="errors.indexOf(first_name) >= 0 && is_submit_signup== true">Please enter first name</span>
+      </ion-list>
+	  
+	    <ion-list lines="none">
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" name="last_name" placeholder="Enter Last Name"  [(ngModel)]="last_name" >
+          </ion-input>
+        </ion-item>
+		 <span error *ngIf="errors.indexOf(last_name) >= 0 && is_submit_signup== true">Please enter last name</span>
+      </ion-list>
+	  
+	  
+	  <ion-list lines="none">
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" name="email" placeholder="Email" [(ngModel)]="email">
+          </ion-input>
+        </ion-item>
+		 <span error *ngIf="errors.indexOf(email) >= 0 && is_submit_signup == true">Please enter email address</span>
+         <span error *ngIf="errors.indexOf(email) == -1 && is_submit_signup == true && !reg_exp_email.test(email.toLowerCase())">Please enter valid email address</span>
+      </ion-list>
+
+      <ion-list lines="none">
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input [type]="hidePass ? 'password' : 'text'"  name="password" placeholder="Password" autocapitalize="off" [(ngModel)]="password">
+          </ion-input>
+          <ion-icon eyesIcon [name]="hidePass ? 'eye-off-outline' : 'eye'" (click)="myFunction()"></ion-icon>
+        </ion-item>
+		<span error *ngIf="errors.indexOf(password) >= 0 && is_submit_signup == true">Please enter password</span>
+        <span error *ngIf="errors.indexOf(password) ==-1 && is_submit_signup == true && !reg_password.test(password)">Password must be Minimum eight characters, at least one letter, one number and one special character!</span>
+     
+        
+      </ion-list><ion-list lines="none">
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input [type]="hidePass1 ? 'password' : 'text'"  name="confirm_password" placeholder="Confirm Password" autocapitalize="off"
+		  [(ngModel)]="confirm_password">
+          </ion-input>
+          <ion-icon eyesIcon [name]="hidePass1 ? 'eye-off-outline' : 'eye'" (click)="myFunction()"></ion-icon>
+        </ion-item>
+         <span error *ngIf="errors.indexOf(confirm_password) >= 0 && is_submit_signup == true">Please enter confirm password</span>
+           <span error *ngIf="errors.indexOf(confirm_password) ==-1 && is_submit_signup == true && password!=confirm_password">Password and confirm password does not match</span>
+     
+      </ion-list>
+      
+       <ion-button loginbt expand="full" shape="round" color="" (click)="submit()">Sign Up</ion-button>
+	       <p bottomlink loginnow>Already have an account? <a routerLink="/login"> Login Now</a></p>
+		   <p bottomlink signupnow>Want to become expert? <a routerLink="/expertsignup"> Signup now</a></p>
+    </form>
+  </div>
+</ion-content>

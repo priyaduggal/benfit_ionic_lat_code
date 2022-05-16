@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+     <ion-back-button slot="start" defaultHref="/tabs/settings"  icon="chevron-back-outline">
+    </ion-back-button >
+     <ion-title class="ion-text-center">Choose Equipment</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  style="background-image: url('assets/images/circlebg.svg');">
+<div chooseequipment>
+<ion-row>
+<ion-col size="6" *ngFor="let workout of workouts">
+<div equipment routerLink="/chooseworkout/workoutvideos/{{workout?.id}}">
+<img src="{{IMAGES_URL}}/{{workout?.image}}"/>
+<h2>{{workout?.name}}</h2>
+</div>
+</ion-col>
+</ion-row>
+</div>
+</ion-content>

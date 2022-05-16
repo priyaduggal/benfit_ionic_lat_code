@@ -1,0 +1,8 @@
+{
+  "name": "benfit",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

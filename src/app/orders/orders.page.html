@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/tabs/settings" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <p *ngIf="orders?.length==0">No records found</p>
+    <div padBox *ngFor="let order of orders">
+      <ion-thumbnail>
+        <a routerLink="orderdetails/{{order?.id}}" *ngIf="errors.indexOf(order?.res_id)>=0"><img   src="{{showimage(order?.images)}}"/></a> 
+
+        <a routerLink="orderdetails/{{order?.id}}" *ngIf="errors.indexOf(order?.res_id)==-1"><img   src="{{IMAGES_URL}}/{{order?.image}}"/></a>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category  *ngIf="errors.indexOf(order?.res_id)>=0"> <a routerLink="orderdetails/{{order?.id}}"><span>{{order?.title}}</span></a> </p>
+
+          <p class="mt-0" category  *ngIf="errors.indexOf(order?.res_id)==-1"> <a routerLink="orderdetails/{{order?.id}}"><span>{{order?.name}}</span></a> </p>
+
+
+        <p pricePro><span>Order Id:</span> {{order?.id}}</p>
+      </ion-label>
+      <a routerLink="orderdetails/{{order?.id}}"><img src="assets/images/arrowl.svg" downLoadImg /></a>
+    </div>
+   
+ 
+  </div>
+</ion-content>

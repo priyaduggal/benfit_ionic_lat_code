@@ -1,0 +1,194 @@
+ion-header {
+	padding: 0 15px;
+	position: absolute;
+	--box-shadow: none;
+	ion-toolbar {
+		background-color: transparent;
+		--background: transparent;
+		--border-width: 0;
+		ion-title {
+			color: #000;
+			font-size: 22px;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+		ion-buttons {
+			position: absolute;
+			ion-icon {
+				font-size: 20px;
+				color: #56BCB4;
+			}
+		}
+	}
+}
+
+.header-md::after {
+	background-image: none
+}
+
+ion-item {
+  --ion-safe-area-right: 0;
+}
+
+ion-content {
+	--background: none;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: #fff;
+	[wrapper] {
+		padding: 60px 15px 0;
+    ion-list{
+      background:transparent;
+      --background:transparent;
+      .labeltxt{
+        margin-bottom: 6px;
+        padding-left: 10px;
+      }     img.table-user {
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
+    object-fit: fill;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+      margin-bottom: 12px;
+      ion-item{
+        border: 1px solid #D8D8D8;
+        border-radius: 10px;
+        ion-input{
+          --padding-start:12px;
+          height: 49px;
+        }
+        ion-textarea,
+        ion-datetime{
+          --padding-start:12px;
+          color: #000;
+        }
+      }
+    }
+	}
+}
+
+.p15
+{
+  padding-left: 10px;
+}
+
+.pl0
+{
+  padding-left: 0;
+}
+
+.pr0{
+  padding-right: 0;
+}
+
+/* Upload Image */
+.newfileupload {
+  width: 100%;
+  .fileupld {
+    display: block;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    font-size: 18px;
+    padding-bottom: 5px;
+  }
+  input[class="file-upload"] {
+    display: none;
+  }
+  label[for="fupload"] {
+    background: transparent;
+    height: 132px;
+    background-image: url('../../../../assets/images/upload.svg');
+    background-repeat: no-repeat;
+    background-position: top 30px center;
+    position: relative;
+    background-size: 15%;
+    color: transparent;
+    width: 100%;
+    border: 2px dashed #E1E1E1;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 400ms ease;
+    border-radius: 30px;
+  }
+  label[for="fupload"]:before {
+    content: "Tap to Add Image Here";
+    display: block;
+    position: absolute;
+    top: 71%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--ion-color-primary);
+    font-weight: 600;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+  }
+  label[for="fupload"]:after {
+    display: none;
+    content: 'Browse';
+    background: #16a317;
+    width: 86px;
+    height: 27px;
+    line-height: 27px;
+    position: absolute;
+    bottom: 19px;
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .file_names {
+    display: block;
+    position: absolute;
+    color: black;
+    left: 0;
+    bottom: -30px;
+    font-size: 13px;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+.newfileupload label[for="fupload"].changed,
+.newfileupload label[for="fupload"]:hover {
+  background-color: #fff;
+}
+
+[uploadList]{
+  ion-item{
+    border: 0 !important;
+  }
+}
+
+ion-footer{
+  margin-bottom: 10px;
+  padding: 0 15px;
+  [bottomBtm]
+    {
+      position: relative;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transform: translate(0,0);
+
+      ion-button{
+        box-shadow: 0px 4px 54px rgba(86, 188, 180, 0.5) !important;
+        border-radius: 100px;
+        margin-top: 10px;
+        width: 100%;
+      }
+  }
+}
+:host ::ng-deep .ck.ck-editor__editable {
+  min-height: 200px;
+}

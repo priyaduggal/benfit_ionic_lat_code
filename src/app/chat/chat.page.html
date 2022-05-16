@@ -1,0 +1,39 @@
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <h1 class="ion-text-center">CHATS</h1>
+    <ion-searchbar showCancelButton="never"  name="keyword" [(ngModel)]="keyword" (input)="change($event)"></ion-searchbar>
+    <div chat>
+      <p *ngIf="inbox?.length==0">No record found</p>
+      <ion-item-sliding class="ion-no-padding" *ngFor="let in of inbox">
+        <ion-item lines="none" class="ion-no-padding">
+           <ion-avatar  routerLink="/chat/message/{{in?.id}}">
+              <img src="assets/images/image.jpg" *ngIf="errors.indexOf(in?.image)>=0">
+               <img src="{{IMAGES_URL}}/{{in?.image}}" *ngIf="errors.indexOf(in?.image)==-1">
+           </ion-avatar>
+           <ion-label  routerLink="/chat/message/{{in?.id}}">
+              <ion-row >
+                 <ion-col size="8" pl-0>
+                    <h2>{{in?.first_name}} </h2>
+                 </ion-col>
+                 <ion-col pr-0  class="ion-text-right" size="4">
+                    <h3>{{in?.message?.created_at | timeAgo}}</h3>
+                 </ion-col>
+              </ion-row>
+              <ion-row>
+                 <ion-col size="8" pl-0>
+                    <p>{{in?.message?.message}} </p>
+                 </ion-col>
+                 <ion-col  class="ion-text-right"   pr-0 size="4" *ngIf="in?.unread>0"><span msgcount>{{in?.unread}}</span></ion-col>
+              </ion-row>
+           </ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+           <ion-item-option delete><img src="assets/images/trash.svg"/></ion-item-option>
+        </ion-item-options>
+     </ion-item-sliding>
+    </div>
+    <!-- <div bottomBtm class="ion-text-center">
+      <ion-button shape="round" expand="full" routerLink="/tabs/tab1">Go To Home</ion-button>
+    </div> -->
+  </div>
+</ion-content>

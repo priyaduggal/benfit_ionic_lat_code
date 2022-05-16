@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <!--ion-buttons slot="start">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-buttons-->
+	<ion-back-button slot="start" defaultHref="/question13" text="" icon="chevron-back-outline"></ion-back-button>
+    <!--ion-title class="ion-text-center"></ion-title-->
+	<span slot="end" totalquestion>Question 12 <small>of 15</small></span>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div wrapper>
+      <span icon-box>
+        <img src="assets/images/qus14.svg" alt="">
+      </span>
+      <h1 choose-head>What foods do you not like?</h1>
+      <ion-list lines="none">
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Type here..." autocapitalize="off"  name="foods_like" [(ngModel)]="foods_like">
+          </ion-input>
+        </ion-item>
+        <span error *ngIf="errors.indexOf(foods_like)>=0 && is_submit_signup == true ">Please enter foods you like</span> 
+      </ion-list>	
+    </div>
+</ion-content>
+<ion-footer>
+  <div gwt-next-foot class="ion-text-center">
+     <ion-button shape="round" routerLink="/question15" color="primary">Skip</ion-button>
+    <ion-button (click)="submit()"shape="round" color="primary">Next</ion-button>
+  </div>
+</ion-footer>

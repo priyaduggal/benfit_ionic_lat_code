@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/settings/updateprofile" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">Change Email Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <form>
+      <ion-list lines="none">
+        <div class="labeltxt">Current Email Address</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="email" value="benfitclub@gmail.com" autocapitalize="off" required></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">New Email Address</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="email" value="benfitclub@gmail.com" autocapitalize="off" required></ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div bottomBtm class="ion-text-center">
+    <ion-button shape="round" color="primary">Update Email Address</ion-button>
+  </div>
+</ion-footer>

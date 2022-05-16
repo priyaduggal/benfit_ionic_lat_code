@@ -1,0 +1,144 @@
+ion-header {
+	padding: 0 15px;
+	position: absolute;
+	--box-shadow: none;
+	ion-toolbar {
+		background-color: transparent;
+		--background: transparent;
+		--border-width: 0;
+		ion-title {
+			color: #000;
+			font-size: 22px;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+		ion-buttons {
+			position: absolute;
+			ion-icon {
+				font-size: 20px;
+				color: var(--ion-color-primary);
+			}
+		}
+    ion-img{
+        width: 25px;
+        transform: rotate(45deg);
+    }
+	}
+}
+
+ion-content {
+	--background: none;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: #fff;
+	[wrapper] {
+		padding: 60px 20px 20px;
+
+        [btnbottom] 
+{margin-top: 10px;
+display: flex;
+        ion-button {
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+}
+}
+    [eventContainer]{
+      [eventBox]{
+        h2{
+          font-size: 16px;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          font-weight: 400;
+          color: #333333;
+          span{
+            font-size: 11px;
+            color: #888888;
+            padding-left: 8px;
+          }
+        }
+        p{
+          margin: 0;
+          color: #999999;
+          display: flex;
+          align-items: center;
+          padding-top: 4px;
+          img{
+            width: 14px;
+            margin-right: 6px;
+          }
+        }
+      }
+
+      [eventBox1]{
+        margin-top: 15px;
+        .pHead{
+          margin: 0;
+          color: #000;
+          display: flex;
+          align-items: center;
+          font-size: 18px;
+          padding-top: 4px;
+          img{
+            width: 14px;
+            margin-right: 6px;
+          }
+        }
+        p{
+          line-height: 25.2px;
+          font-size: 18px;
+          color: #636363;
+          margin: 9px 0;
+        }
+      }
+
+      [eventBoxImg]{
+        position: relative;
+        margin-top: 15px;
+        border-radius: 24px;
+        height: 252px;
+        width: 100%;
+        background-size: cover;
+        background-position: center center;
+        &::before{
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          right: 0;
+          border-radius: 24px;
+          bottom: 0;
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+        }
+        [eventDesc]{
+          position: absolute;
+          bottom: 19px;
+          left: 15px;
+          h3{
+            margin: 0 0 2px;
+            color: #fff;
+          }
+          p{
+            margin: 0;
+            color: #AEAAA4;
+            span{
+              padding-right: 25px;
+            }
+          }
+        }
+      }
+    }
+
+	}
+}
+
+hr{
+  background-color: #C4C4C4;
+  margin: 18px 0;
+}

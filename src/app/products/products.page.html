@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-toolbar  class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/tabs/tab1" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">PRODUCTS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" style="background-image: url('assets/images/receipebg.jpg');">
+  <div wrapper>
+    <ion-row>
+      <ion-col size="10">
+        <ion-searchbar showCancelButton="never" name="keyword" [(ngModel)]="keyword" (input)="change($event)"><img (click)="presentModal()" src="assets/images/filter.svg" /></ion-searchbar>
+      </ion-col>
+      <ion-col size="2">
+        <ion-buttons iconright routerLink="/cart">
+          <img slot="end" src="assets/images/cart.svg"/>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+    <div cateGory leftSlide>
+      <ion-slides  pager="true" [options]="slideOpts">
+        <ion-slide class="active productsall products " (click)="getproducts()">
+          <h3>All</h3>
+        </ion-slide>
+        <ion-slide *ngFor="let cat of categories"  class=" products products{{cat?.id}}"(click)="showproducts(cat?.id)">
+          <h3>{{cat?.name}}</h3>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <p *ngIf="products?.length==0 && datapro==true">No records found</p>
+    <div *ngIf="products?.length==0 && datapro==false">
+        <div padBox >
+      <ion-thumbnail>
+       <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text> </p>
+        <p pricePro><ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text></p>
+        <p pricePro1>
+          <span >
+           <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text>
+
+            <p ><ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text></p>
+          </span>
+          <ion-buttons iconright1>
+            Buy
+          </ion-buttons>
+        </p>
+      </ion-label>
+    </div>
+    <div padBox >
+      <ion-thumbnail>
+       <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text> </p>
+        <p pricePro><ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text></p>
+        <p pricePro1>
+          <span >
+           <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text>
+
+            <p ><ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text></p>
+          </span>
+          <ion-buttons iconright1>
+            Buy
+          </ion-buttons>
+        </p>
+      </ion-label>
+    </div>
+    <div padBox >
+      <ion-thumbnail>
+       <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text> </p>
+        <p pricePro><ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text></p>
+        <p pricePro1>
+          <span >
+           <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text>
+
+            <p ><ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text></p>
+          </span>
+          <ion-buttons iconright1>
+            Buy
+          </ion-buttons>
+        </p>
+      </ion-label>
+    </div>
+    <div padBox >
+      <ion-thumbnail>
+       <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text> </p>
+        <p pricePro><ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text></p>
+        <p pricePro1>
+          <span >
+           <ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text>
+
+            <p ><ion-skeleton-text animated style="width: 80%" ></ion-skeleton-text></p>
+          </span>
+          <ion-buttons iconright1>
+            Buy
+          </ion-buttons>
+        </p>
+      </ion-label>
+    </div>
+    </div>
+    <div *ngIf="products?.length>0">
+        <div padBox *ngFor="let pro of products">
+
+      <ion-thumbnail>
+        <a routerLink="/productdetails/{{pro?.id}}">
+          <img src="{{showimage(pro?.images)}}"/></a>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <a routerLink="/productdetails/{{pro?.id}}"><span>{{pro?.title}}</span></a> </p>
+        <p pricePro>{{pro?.sub_title}}</p>
+        <p pricePro1>
+          <span *ngIf="pro?.types?.length>0">
+            <p [ngClass]="pro?.discount > 0 ? 'my_class1' : 'my_class2'"><strong>${{pro?.types[0]?.price}}.</strong><span>00</span></p>
+
+            <p *ngIf="pro?.discount>0"><strong>${{ getorprice(pro?.types[0]?.price,pro?.discount)}}</strong></p>
+          </span>
+          <ion-buttons iconright1 (click)="buy(pro?.id)">
+            Buy
+          </ion-buttons>
+        </p>
+      </ion-label>
+    </div>
+    </div>
+  
+
+  </div>
+</ion-content>

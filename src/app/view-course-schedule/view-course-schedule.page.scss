@@ -1,0 +1,117 @@
+ion-content
+{
+	--background: linear-gradient(177deg, #bae9e5 23%, #e8f9f7 56%);
+	[calendarbg] 
+	{
+		background: #fff;
+		padding: 6px;
+		border-radius: 12px;
+		box-shadow: 0 0 10px rgba(0 , 0 , 0 , 0.11);
+		margin: 15px 15px 25px;
+		.flexCal 
+		{
+			display: flex;
+			justify-content: space-around;
+			margin-bottom: 10px;
+			margin-top: 18px;
+			text-align: center;
+			.commoncal 
+			{
+				padding: 9px 5px 6px;
+			}
+			.active 
+			{
+				background-color: #5eb9b5;
+				border-radius: 100px;
+				box-shadow: -2px 6px 27px -13px rgba(98 , 98 , 98 , 0.51);
+				h2 
+				{
+					color: #fff;
+				}
+				h3 
+				{
+					color: #fff;
+				}
+			}
+			h2 
+			{
+				margin: 0 0 3px;
+				font-size: 14px;
+				font-weight: 500;
+				text-transform: uppercase;
+				color: #919191;
+			}
+			h3 
+			{
+				margin: 0;
+				color: #919191;
+				border-radius: 100px;
+				padding: 8px;
+				font-size: 19px;
+			}
+		}
+		[time-schedule] 
+		{
+			padding: 0 16px;
+			span 
+			{
+				color: #2ab4ae;
+			}
+			strong 
+			{
+				color: #2ab4ae;
+			}
+			[inner-main] 
+			{
+				margin-bottom: 7px;
+			}
+		}	
+	
+	}
+	[main-df] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+				
+				}	
+				ion-item {
+   border: transparent;
+    --border-color: transparent;
+    background: #fff;
+    border-radius: 15px;
+    margin: 0 16px;
+	margin-bottom: 10px;
+}
+ion-label {
+    color: #2AB4AE;
+    font-size: 14px !important;
+    font-weight: 600;    margin: 0;
+}
+ion-button {
+  --background: #E3FFFC;
+    color: #2AB4AE;
+    height: 28px;
+    width: 70px;
+    font-size: 15px;
+    font-weight: 700;
+    /* box-shadow: 0 3px 6px #5eb9b5; */
+    --box-shadow: 0 3px 6px #b0e5df;
+}
+sched 
+{
+.main-view {
+    width: 170px !important;
+    margin: 0 auto;
+    display: block;
+}
+
+}
+[main-btns] {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-top: 42px;
+    /* width: 440px; */
+    /* max-width: 730px; */
+}
+}

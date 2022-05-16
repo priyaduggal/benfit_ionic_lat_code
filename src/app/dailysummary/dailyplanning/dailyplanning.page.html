@@ -1,0 +1,95 @@
+<ion-header [class.show-background]="showToolbar">
+  <ion-toolbar  class="py-2" lines="none">
+    <ion-back-button slot="start" defaultHref="/dailysummary"  icon="chevron-back-outline">
+    </ion-back-button >
+     <ion-title class="ion-text-center">WEEK PLANNING</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)" style="background-image: url('assets/images/receipebg.jpg');">
+  <div wrapper>  
+    <img src="assets/images/calDate.png"/>
+    
+    <div accPadding>
+      <h2>
+        <small>04:00 am</small>
+        <span>24 June 2021</span>
+      </h2>
+      <h3><span>Exercise</span></h3>
+      <ion-row>
+        <ion-col size="4">
+          <div class="weekBox" style="background-image: url('assets/images/back.png');">
+            <input id="checkbox-1" class="checkbox-custom" name="checkbox-1" type="checkbox">
+            <label for="checkbox-1" class="checkbox-custom-label">
+              <span>Back</span>
+            </label>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="weekBox" style="background-image: url('assets/images/ch3.png');">
+            <input id="checkbox-2" class="checkbox-custom" name="checkbox-2" type="checkbox">
+            <label for="checkbox-2" class="checkbox-custom-label">
+              <span>Leg</span>
+            </label>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <h3 class="mt15"><span>Morning</span></h3>
+      <ion-row>
+        <ion-col size="4">
+          <div class="weekBox" style="background-image: url('assets/images/back.png');">
+            <input id="checkbox-3" class="checkbox-custom" name="checkbox-3" type="checkbox">
+            <label for="checkbox-3" class="checkbox-custom-label">
+              <span>Inclined Back</span>
+            </label>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="weekBox" style="background-image: url('assets/images/dead.png');">
+            <input id="checkbox-4" class="checkbox-custom" name="checkbox-4" type="checkbox">
+            <label for="checkbox-4" class="checkbox-custom-label">
+              <span>Deadlift</span>
+            </label>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="weekBox" style="background-image: url('assets/images/over.png');">
+            <input id="checkbox-4" class="checkbox-custom" name="checkbox-4" type="checkbox">
+            <label for="checkbox-4" class="checkbox-custom-label">
+              <span>Dumbbell Pull-Over</span>
+            </label>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <h3 class="mt15"><span>Evening</span></h3>
+      <ion-row>
+        <ion-col size="4">
+          <div class="weekBox" style="background-image: url('assets/images/ch3.png');">
+            <input id="checkbox-4" class="checkbox-custom" name="checkbox-4" type="checkbox">
+            <label for="checkbox-4" class="checkbox-custom-label">
+              <span>Inclined Back</span>
+            </label>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="weekBox" style="background-image: url('assets/images/front.png');">
+            <input id="checkbox-4" class="checkbox-custom" name="checkbox-4" type="checkbox">
+            <label for="checkbox-4" class="checkbox-custom-label">
+              <span>Front squat </span>
+            </label>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="weekBox" style="background-image: url('assets/images/dumb.png');">
+            <input id="checkbox-4" class="checkbox-custom" name="checkbox-4" type="checkbox">
+            <label for="checkbox-4" class="checkbox-custom-label">
+              <span>Dumbbell Pull-Over</span>
+            </label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

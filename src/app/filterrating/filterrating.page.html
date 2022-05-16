@@ -1,0 +1,16 @@
+<ion-content>
+  <div filtersec>
+    <!-- <a closebtn href="javascript:void(0)" (click)="dismiss()">
+      <ion-icon name="close-outline"></ion-icon>
+    </a> -->
+    <div headsec>
+      <ion-item lines="none">
+         <ngx-stars [size]='2'  (ratingOutput)="onRatingSet($event)" [maxStars]="5" [color]="'#f7a61f'"></ngx-stars>
+           <span error *ngIf="errors.indexOf(ratingDisplay) >= 0 && is_submit_signup == true">Please add rating</span>
+      </ion-item>
+      <ion-button color="primary" shape="round" (click)="save();">
+        Save
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

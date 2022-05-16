@@ -1,0 +1,226 @@
+ion-content{
+    --background: linear-gradient(177deg, #bae9e5 23%, #e8f9f7 56%) !important;
+  position: relative;
+  img.logs{max-width: 100%;
+    width: 70px;}
+	.my-mn {
+    margin-top: 39px;
+    max-width: 100%;
+    width: 192px;
+}
+h4 {
+    font-size: 60px;
+    color: #5EB9B5;
+}
+ .lts-m {
+    width: 270px;
+    max-width: 100%;
+} 
+
+  [login]
+  {
+    background-color: transparent;
+    position: relative;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 40px 0 0 0;
+    margin-top: 0;
+
+      form
+      {
+          h1,p{
+              color: #000;
+          }
+          h1{
+              margin-top: 5px;
+              margin-bottom: 0;
+              font-size: 22px;
+          }
+          p{
+              font-size: 20px;
+              color: #B6B6B6;
+              margin-top: 7px;
+          }
+          h3{
+              font-size: 18px;
+              color: var(--ion-color-primary);
+              margin: 10px 0 35px;
+              a{
+                  text-decoration: none;
+                  font-weight: 400;
+                  &:hover{
+                      color: #000;
+                  }
+              }
+          }
+          ion-list{
+              background:transparent;
+              color: #000;
+              margin-bottom: 15px;
+              .labeltxt
+              {
+                  font-size: 17px;
+                  color: #B6B6B6;
+              }
+              ion-item{
+                      --ion-safe-area-right: 0;
+    --background: transparent;
+    color: #000;
+    border-bottom: 1px solid #E9EEF2;
+    padding: 0 20px !important;
+    font-size: 15px;
+    --background: #5EB9B5;
+    background: #5EB9B5;
+    border-radius: 23px;
+    height: 50px;
+	box-shadow: 0 6px 6px #dddddda8;
+    color: #fff;
+	
+                  [passInput]
+                  {
+                      --padding-end:40px;
+                  }
+                  [eyesIcon]{
+                    font-size: 21px;
+                    color: #fff;
+                  }
+                  ion-input{
+                      font-size: 18px;
+                      img{
+                          position: absolute;
+                          right: 10px;
+                          width: 19px;
+                          cursor: pointer;
+                      }
+                  }
+              }
+          }
+      }
+      [logo]{
+          width: 100%;
+          max-width: 122px;
+          margin: -75px auto 0 ;
+      }
+  }
+
+  ion-button{
+      height: 52px;
+      font-size: 21px;
+      text-transform: capitalize;
+      font-weight: 400;
+      --box-shadow: none;
+  }
+  [loginbt] {
+  --background: #fff;
+    --box-shadow: 0 6px 6px #bbb;
+    color: #5eb9b5;
+    font-weight: 700;
+    margin-top: 32px
+}
+  [bottomlink]
+  {
+      text-align: center;
+      font-size: 18px;
+      padding-top: 40px;
+      a{
+          &:hover{
+              color: #000;
+          }
+      }
+  }
+
+  @media(max-width: 376px){
+    [bottomlink]
+    {
+      font-size: 16px !important;
+      padding-top: 6px;
+      margin-bottom: 0;
+    }
+    [login]{
+
+      form{
+        h3{
+          font-size: 14px;
+          margin: 10px 0 6px;
+        }
+        h1{
+          font-size: 22px;
+        }
+        ion-list{
+          margin-bottom: 7px;
+          .labeltxt
+          {
+            font-size: 14px;
+          }
+          ion-item{
+            ion-input{
+                 font-size: 15px;
+    text-align: center;
+    font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+
+    ion-button{
+      margin-top: 18px;
+    }
+  }
+  @media(max-width: 320px)
+  {
+    [login]
+    {
+      [logo]{
+        max-width: 88px;
+        margin: -56px auto 0;
+      }
+      padding: 15px 15px;
+      form{
+        h3{
+          font-size: 14px;
+          margin: 10px 0 12px;
+        }
+        h1{
+          font-size: 22px;
+        }
+        p{
+          font-size: 15px;
+          color: #B6B6B6;
+          margin-top: 5px;
+        }
+        ion-list{
+          .labeltxt
+          {
+            font-size: 14px;
+          }
+          ion-item{
+            ion-input{
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+    [bottomlink]
+    {
+      font-size: 17px !important;
+      padding-top: 11px;
+      margin-bottom: 5px;
+    }
+    ion-button{
+      height: 48px;
+      font-size: 18px;
+    }
+  }
+  [pl0]
+  {
+    padding-left: 0;
+  }
+  [pr0]
+  {
+    padding-right: 0;
+  }
+}

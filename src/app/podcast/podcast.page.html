@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/tabs/settings" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">PODCAST</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div wrapper>
+    <div pdHeading>
+      <h2>Discover <br /> <span>Top podcasts on Benfit</span></h2>
+      <!--span>Show all</span-->
+    </div>
+
+    <div chooseExpert>
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let fea of podcasts_fea">
+          <div slideBox routerLink="podcastdetails">
+             <img src="{{IMAGES_URL}}/{{fea?.image}}" />
+             <h3>{{fea?.title}}</h3>
+             <p>{{fea?.subtitle}}</p>
+          </div>
+        </ion-slide>
+       
+      </ion-slides>
+    </div>
+
+    <div pdHeading>
+      <h2>Our Podcasts</h2>
+    </div>
+
+    <div boxShadow>
+      <div padBox activesong routerLink="podcastdetails/{{al?.id}}" *ngFor="let al of all">
+        <ion-thumbnail>
+          <a><img src="{{IMAGES_URL}}/{{al?.image}}"/></a>
+        </ion-thumbnail>
+        <ion-label>
+          <h5 epiHeading>{{al?.title}}</h5>
+          <h2>{{al?.subtitle}}</h2>
+        </ion-label>
+        <!--span downLoadImg>12:30</span-->
+      </div>
+    </div>
+
+  </div>
+</ion-content>

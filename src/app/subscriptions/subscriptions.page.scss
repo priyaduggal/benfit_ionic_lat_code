@@ -1,0 +1,112 @@
+ion-header {
+	padding: 0 6px;
+	position: absolute;
+	--box-shadow: none;
+	ion-toolbar {
+		background-color: transparent;
+		--background: transparent;
+		--border-width: 0;
+		ion-title {
+			color: #fff;
+      font-size: 22px;
+			font-weight: 500;
+		}
+	ion-buttons , ion-back-button{
+			position: absolute;
+			font-size: 20px;
+			left: -10px;
+			z-index:99;
+			color:#fff;
+			ion-icon {
+				font-size: 20px;
+			color:#fff;
+			
+   }
+   }
+	}
+}
+
+.header-md::after {
+	background-image: none
+}
+
+ion-content {
+	--background: none;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #fff;
+	[wrapper] {
+        padding: 160px 15px 15px;
+        h2
+        {font-weight: 400;
+            color: #fff;
+            font-size:20px;
+            line-height: 24.98px;
+            text-align: center;
+            width: calc(100% - 30px);
+            margin:0 auto 50px;
+
+        }
+        [chooseExpert]{
+            margin-bottom: 15px;
+            margin-top: 15px;
+            ::ng-deep {
+                .swiper-pagination{
+                  display: none;
+                }
+            }
+
+            h2{
+              font-size: 20px;
+              font-weight: 600;
+              color: #000;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              span{
+                  font-size: 14px;
+                  font-weight: 400;
+                  color: var(--ion-color-primary);
+                  cursor: pointer;
+              }
+            }
+            [slideBox]{
+                width: 100%;
+                padding: 40px 15px;
+                color: #fff;
+                text-align: center;
+                background: transparent;
+                border: 1px solid #FFFFFF;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.12);
+                border-radius: 16px;
+                &[active]{
+                    background: rgba(86, 188, 180, 0.5);
+                }
+
+                p{
+                    display: flex;
+                    align-items: center;
+                    ion-icon{
+                        margin-right: 5px;
+                    }
+                }
+                h4{
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+                h3{
+                    color: #fff;
+                    font-size: 30px;
+                    line-height: 37px;
+                }
+            }
+        }
+        ion-button{
+            --background:#fff;
+            color: #000;
+        }
+    }
+}

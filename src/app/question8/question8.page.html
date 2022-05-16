@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+   <ion-back-button slot="start" defaultHref="/question7" text="" icon="chevron-back-outline"></ion-back-button>
+    <!--ion-title class="ion-text-center"></ion-title-->
+	<span slot="end" totalquestion>Question 7 <small>of 15</small></span>
+  </ion-toolbar>
+</ion-header> 
+<ion-content>
+    <div wrapper>
+		<span icon-box>
+			<img src="assets/images/phyical-icon.svg" alt="">
+		</span>
+		<h1 choose-head>How's your physical condition?</h1>
+		<div aimCon [ngClass]="physical_condition == 'Super Good' ? 'active': ''" (click)="set('Super Good')">
+      <div aimBox  >
+        <h2>Super Good</h2>
+        <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="physical_condition=='Super Good'"></ion-icon>
+      </div>
+    </div>
+
+    <div aimCon  [ngClass]="physical_condition == 'Good' ? 'active': ''" (click)="set('Good')">
+      <div aimBox >
+        <h2>Good</h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="physical_condition=='Good'"></ion-icon>
+      </div>
+    </div>
+
+    <div aimCon [ngClass]="physical_condition == 'Normal' ? 'active': ''" (click)="set('Normal')">
+      <div aimBox >
+        <h2>Normal</h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="physical_condition=='Normal'"></ion-icon>
+      </div>
+    </div>
+      <div aimCon [ngClass]="physical_condition == 'Bad' ? 'active': ''" (click)="set('Bad')">
+      <div aimBox >
+        <h2>Bad</h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="physical_condition=='Bad'"></ion-icon>
+      </div>
+    </div>
+      <div aimCon [ngClass]="physical_condition == 'Very Bad' ? 'active': ''" (click)="set('Very Bad')">
+      <div aimBox >
+        <h2>Very Bad</h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="physical_condition=='Very Bad'"></ion-icon>
+      </div>
+    </div>
+		<!--ion-list lines="none">
+			<ion-item lines="none" class="ion-no-padding">
+			  
+			<ion-select value=""  style="width: 100%;" Placeholder="Please select"okText="Okay" cancelText="Dismiss" name="physical_condition" [(ngModel)]="physical_condition">
+      <ion-select-option value="good">good</ion-select-option>
+      <ion-select-option value="normal">normal</ion-select-option>
+      <ion-select-option value="bad">bad</ion-select-option>
+      <ion-select-option value="very bad">very bad</ion-select-option>
+    </ion-select>
+
+
+
+			</ion-item>
+			 <span error *ngIf="errors.indexOf(physical_condition)>=0 && is_submit_signup == true ">Please enter your physical condition </span>  
+		</ion-list-->	
+    </div>
+</ion-content>
+<ion-footer>
+  <div gwt-next-foot class="ion-text-center">
+  	 <ion-button shape="round" routerLink="/question9" color="primary">Skip</ion-button>
+    <ion-button (click)="submit()" shape="round" color="primary">Next</ion-button>
+  </div>
+</ion-footer>

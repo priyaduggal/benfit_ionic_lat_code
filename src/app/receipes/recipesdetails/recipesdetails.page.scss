@@ -1,0 +1,146 @@
+ion-header {
+  padding: 0 15px;
+  position: absolute;
+  --box-shadow: none;
+
+  ion-toolbar {
+    background-color: transparent;
+    --background: transparent;
+    --border-width: 0;
+
+    ion-title {
+      color: #000;
+      font-size: 22px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    ion-buttons,
+    ion-back-button {
+      position: absolute;
+      font-size: 20px;
+      left: -10px;
+      z-index: 99;
+      color: var(--ion-color-primary);
+
+      ion-icon {
+        font-size: 20px;
+        color: var(--ion-color-primary);
+      }
+    }
+  }
+}
+
+.header-md::after {
+  background-image: none
+}
+
+ion-content {
+  --background: none;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
+
+  [wrapper] {
+    padding: 70px 15px 0;
+
+    [bannerImg] {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 0 5px 0px rgba(0,0,0,0.2);
+    }
+
+    [sheading] {
+      h2 {
+        margin-bottom: 5px;
+      }
+
+      span {
+        color: #666666;
+      }
+    }
+
+    .pricebox
+    {
+      color: var(--ion-color-primary);
+      font-size: 23px;
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+
+    [myb] {
+      margin: 25px 0;
+    }
+
+    p {
+      margin-top: 0;
+      color: #666666;
+    }
+
+    [mb14] {
+      margin-bottom: 14px;
+    }
+
+    [circleProgress] {
+      position: relative;
+
+      h3 {
+        text-align: center;
+        margin-top: 0;
+        color: #AAAAAA;
+        font-size: 14px;
+      }
+    }
+
+    [contentPara] {
+      p {
+        margin-bottom: 6px;
+        color: #666666;
+      }
+
+      &[contentFlex] {
+        p {
+          display: flex;
+          align-items: flex-start;
+
+          span {
+            display: block;
+            min-width: 18px;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--ion-color-primary);
+          }
+        }
+      }
+    }
+
+    [quanityincdec]{
+      display: flex;
+      align-items: center;
+      ion-icon[name="remove"],
+      ion-icon[name="add"]{
+        font-size: 15px;
+        background-color: #EEF8F8;
+        padding: 5px;
+        font-weight: 700;
+      }
+
+      span
+      {
+        font-size: 15px;
+        margin:  0 8px;
+      }
+    }
+
+  }
+}
+
+.flexqus
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

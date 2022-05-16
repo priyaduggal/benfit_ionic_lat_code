@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+	 <ion-back-button slot="start" defaultHref="/activitylevel"  icon="chevron-back-outline">
+    </ion-back-button>
+    <ion-title class="ion-text-center">Subscription</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/subs.png');">
+  <div wrapper>
+    <h2>Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</h2>
+
+    <div chooseExpert>
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide >
+          <div slideBox active>
+             <h4>Monthly</h4>
+             <h3>$23.00</h3>
+             <p><ion-icon name="chevron-forward-outline"></ion-icon> Lorem Ipsum Lorem</p>
+             <p><ion-icon name="chevron-forward-outline"></ion-icon> Lorem Ipsum Lorem</p>
+             <p><ion-icon name="chevron-forward-outline"></ion-icon> Lorem Ipsum Lorem</p>
+             <ion-button shape="round" routerLink="/tabs/tab1">Choose</ion-button>
+          </div>
+        </ion-slide>
+
+        <ion-slide>
+          <div slideBox>
+             <h4>Monthly</h4>
+             <h3>$23.00</h3>
+             <p><ion-icon name="chevron-forward-outline"></ion-icon> Lorem Ipsum Lorem</p>
+             <p><ion-icon name="chevron-forward-outline"></ion-icon> Lorem Ipsum Lorem</p>
+             <p><ion-icon name="chevron-forward-outline"></ion-icon> Lorem Ipsum Lorem</p>
+             <ion-button shape="round" routerLink="/tabs/tab1">Choose</ion-button>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="ion-text-end">
+      <ion-button shape="round" routerLink="/tabs/tab1">Skip</ion-button>
+    </div>
+  </div>
+</ion-content>

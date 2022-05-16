@@ -1,0 +1,23 @@
+<ion-header >
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/tabs/mealsdietplans" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">{{meals[0]?.cname}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <div padBox *ngFor="let meal of meals">
+      <ion-thumbnail>
+        <a routerLink="/mealsdietplans/mealstypedetails/{{id}}/{{meal?.id}}"><img src="{{IMAGES_URL}}/{{meal?.image}}"/></a>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <a routerLink="/mealsdietplans/mealstypedetails/{{id}}/{{meal?.id}}"><span>{{meal?.name}}</span></a> </p>
+        <p pricePro>{{meal?.description.substring(0,50)}}</p>
+        <p pricePro1> {{meal?.serving}} Serving . {{meal?.calories}} Cal </p>
+      </ion-label>
+    </div>
+  </div>
+</ion-content>

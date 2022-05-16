@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <!--ion-buttons slot="start" >
+        <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-buttons-->
+    <ion-back-button
+      slot="start"
+      defaultHref="/question8"
+      text=""
+      icon="chevron-back-outline"
+    ></ion-back-button>
+    <!--ion-title class="ion-text-center"></ion-title-->
+    <span slot="end" totalquestion>Question 8 <small>of 15</small></span>
+  </ion-toolbar>
+
+  <p class="pHeader">How often do you exercise per week?</p>
+</ion-header>
+
+<ion-content>
+  <div wrapper>
+    <!-- <span icon-box>
+      <img src="assets/images/exercise-icon.svg" alt="" />
+    </span> -->
+    <!-- <ion-list lines="none">
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-select
+          value=""
+          style="width: 100%"
+          Placeholder="Please select"
+          okText="Okay"
+          cancelText="Dismiss"
+          name="exercise_often"
+          [(ngModel)]="exercise_often"
+        >
+          <ion-select-option value="1-2">1-2 days</ion-select-option>
+          <ion-select-option value="3-4">3-4 days</ion-select-option>
+          <ion-select-option value="5-7">5-7 days</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <span
+        error
+        *ngIf="errors.indexOf(exercise_often)>=0 && is_submit_signup == true "
+        >Please enter something
+      </span>
+    </ion-list> -->
+    <!-- New Data -->
+    <div aimCon  [ngClass]="exercise_often == '0 days' ? 'active': ''" (click)="set('0 days')">
+      <div aimBox >
+        <h2>0 days</h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="exercise_often=='0 days'"></ion-icon>
+      </div>
+    </div>
+    <div aimCon [ngClass]="exercise_often == '1-2 days' ? 'active': ''" (click)="set('1-2 days')">
+      <div aimBox  >
+        <h2>1-2 days</h2>
+        <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="exercise_often=='1-2 days'"></ion-icon>
+      </div>
+    </div>
+
+
+
+    <div aimCon  [ngClass]="exercise_often == '3-4 days' ? 'active': ''" (click)="set('3-4 days')">
+      <div aimBox >
+        <h2>3-4 days</h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="exercise_often=='3-4 days'"></ion-icon>
+      </div>
+    </div>
+
+    <div aimCon [ngClass]="exercise_often == '5-7 days' ? 'active': ''" (click)="set('5-7 days')">
+      <div aimBox >
+        <h2>5-7 days</h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="exercise_often=='5-7 days'"></ion-icon>
+      </div>
+    </div>
+    <!-- End New Data -->
+  </div>
+</ion-content>
+<ion-footer>
+  <div gwt-next-foot class="ion-text-center">
+    <ion-button shape="round" routerLink="/question11" color="primary"
+      >Skip</ion-button
+    >
+    <ion-button (click)="submit()" shape="round" color="primary"
+      >Next</ion-button
+    >
+  </div>
+</ion-footer>

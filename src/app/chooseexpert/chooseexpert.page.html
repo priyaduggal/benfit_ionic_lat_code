@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-back-button slot="start" defaultHref="/tabs/tab1"  icon="chevron-back-outline">
+    </ion-back-button >
+     <ion-title class="ion-text-center">Choose your Training expert</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <ion-row>
+      <p *ngIf="experts?.length==0">No records found</p>
+      <ion-col size="4" *ngFor="let ex of experts">
+        <div expertBox routerLink="expertdetails/{{ex?.id}}">
+          <img  *ngIf="errors.indexOf(ex?.image)>=0" src="assets/images/image.jpg" />
+           <img  *ngIf="errors.indexOf(ex?.image)==-1" src="{{IMAGES_URL}}/{{ex?.image}}" />
+          <p>{{ex?.first_name}}</p>
+        </div>
+      </ion-col>  
+    </ion-row>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div bottomBtm class="ion-text-center">
+    <ion-button shape="round" color="primary">Done</ion-button>
+  </div>
+</ion-footer>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <!--ion-buttons slot="start">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-buttons-->
+	<ion-back-button slot="start" defaultHref="/question11" text="" icon="chevron-back-outline"></ion-back-button>
+    <!--ion-title class="ion-text-center"></ion-title-->
+	<span slot="end" totalquestion>Question 10 <small>of 15</small></span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div wrapper>
+		<div checkboxlist>
+		    <h1 choose-head>Preferences?</h1>
+
+		     <div aimCon [ngClass]="preferences == 'With Equipment' ? 'active': ''" (click)="set('With Equipment')">
+      <div aimBox >
+        <h2>With Equipment </h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="preferences=='With Equipment'"></ion-icon>
+      </div>
+    </div>
+    <div aimCon [ngClass]="preferences == 'Without equipment' ? 'active': ''" (click)="set('Without equipment')">
+      <div aimBox >
+        <h2>Without equipment</h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="preferences=='Without equipment'"></ion-icon>
+      </div>
+    </div>
+     <div aimCon [ngClass]="preferences == 'Body only' ? 'active': ''" (click)="set('Body only')">
+      <div aimBox >
+        <h2>Body only</h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="preferences=='Body only'"></ion-icon>
+      </div>
+    </div>
+      <div aimCon [ngClass]="preferences == 'Outside or inside' ? 'active': ''" (click)="set('Outside or inside')">
+      <div aimBox >
+        <h2> Outside or inside</h2>
+         <ion-icon slot="end" name="checkmark-circle-outline"
+         *ngIf="preferences=='Outside or inside'"></ion-icon>
+      </div>
+    </div>
+ 
+		</div>
+    </div>
+    	<span error *ngIf="errors.indexOf(preferences)>=0 && is_submit_signup == true ">Please select your preferences</span> 
+</ion-content>
+<ion-footer>
+  <div gwt-next-foot class="ion-text-center">
+  	 <ion-button shape="round" routerLink="/question13" color="primary">Skip</ion-button>
+    <ion-button (click)="submit()" shape="round" color="primary">Next</ion-button>
+  </div>
+</ion-footer>

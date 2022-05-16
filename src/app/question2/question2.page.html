@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <!--ion-buttons slot="start">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-buttons-->
+	<ion-back-button slot="start" defaultHref="/choosegender" text="" icon="chevron-back-outline"></ion-back-button>
+    <!--ion-title class="ion-text-center"></ion-title-->
+	<span slot="end" totalquestion>Question 2 <small>of 16</small></span>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div wrapper>
+      <span icon-box>
+        <img src="assets/images/calendar-icon.svg" alt="">
+      </span>
+      <h1 choose-head>Whats is your Date of Birth?</h1>
+   <ion-item>
+  <ion-label>Date of Birth</ion-label>
+  <ion-datetime displayFormat="DD MMM YYYY" value="" [(ngModel)]="dob" name="dob"></ion-datetime>
+</ion-item>
+    </div>
+</ion-content>
+<ion-footer>
+  <div gwt-next-foot class="ion-text-center">
+     <ion-button shape="round" routerLink="/question3" color="primary">Skip</ion-button>
+    <ion-button (click)="submit()" shape="round" color="primary">Next</ion-button>
+  </div>
+</ion-footer>

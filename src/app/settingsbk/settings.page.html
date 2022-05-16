@@ -1,0 +1,156 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <!-- <ion-buttons slot="start">
+      <ion-icon routerLink="" name="chevron-back-outline"></ion-icon>
+    </ion-buttons> -->
+     <ion-title class="ion-text-center">Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg.svg');">
+  <div profileBox>
+    <div padBox>
+      <ion-thumbnail>
+        <img src="assets/images/userimg.jpg">
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <span>Marvis Ighedosa</span></p>
+        <p pricePro>Dosamarvis@gmail.com</p>
+        <p pricePro1> <a routerLink="updateprofile">Update Profile <img src="assets/images/rightarrow.svg" /></a> </p>
+      </ion-label>
+    </div>
+  </div>
+  <div wrapper>
+    <div settingTab >
+      <div settingTabHead routerLink="changepassword">
+        <div accHeader>
+          Change Password
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/chooseworkout">
+        <div accHeader>
+          Workouts
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/dailysummary">
+        <div accHeader>
+          Daily Summary
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/weekplanning">
+        <div accHeader>
+          Week Planning
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/chooseexpert">
+        <div accHeader>
+          Experts
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/receipes">
+        <div accHeader>
+          Recipes
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/orders">
+        <div accHeader>
+          Orders
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/podcast">
+        <div accHeader>
+          Podcast
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/tabata">
+        <div accHeader>
+          Tabata
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/bulletinboard">
+        <div accHeader>
+          Bulletin
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/eventnews">
+        <div accHeader>
+          Events
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+        <div settingTabHead routerLink="/coupons">
+        <div accHeader>
+          Coupons
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+   <div settingTabHead routerLink="/equipment">
+        <div accHeader>
+          Equipment Specials
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+	    <div settingTabHead routerLink="/subscriptions">
+        <div accHeader>
+         Subscriptions
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/audioandvideo">
+        <div accHeader>
+          Guides
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/settings/aboutus">
+        <div accHeader>
+          About us
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/settings/privacypolicy">
+        <div accHeader>
+          Privacy Policy
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+      <div settingTabHead routerLink="/settings/termsconditions">
+        <div accHeader>
+          Terms & Conditions
+          <img src="assets/images/rightarrow.svg" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div bottomBtm class="ion-text-center">
+    <ion-button shape="round" (click)="logout()"color="primary">Logout</ion-button>
+  </div>
+</ion-footer>

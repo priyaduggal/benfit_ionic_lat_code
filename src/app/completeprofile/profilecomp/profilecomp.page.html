@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/completeprofile" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Complete Your Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div wrapper>
+    <form>
+      <ion-list lines="none">
+        <div class="labeltxt">Hours of sleep per night</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Type here..." autocapitalize="off" required>
+            <img src="assets/images/cicon1.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list lines="none">
+        <div class="labeltxt">How's your physical condition?</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Type here..." autocapitalize="off" required>
+            <img src="assets/images/cicon2.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list lines="none">
+        <div class="labeltxt">How often do you exercise per week?</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Type here..." autocapitalize="off" required>
+            <img src="assets/images/cicon3.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <div class="labeltxt">Your physical activities in (work) everyday life?</div>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-select placeholder="Sitting only">
+            <ion-select-option value="f">Xyz</ion-select-option>
+            <ion-select-option value="m">Xyz 1</ion-select-option>
+          </ion-select>
+          <img src="assets/images/cicon4.svg" dateTime alt="" />
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <div class="labeltxt">Favourite Sports</div>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-select placeholder="Fitness">
+            <ion-select-option value="f">Fitness</ion-select-option>
+            <ion-select-option value="m">Fitness 1</ion-select-option>
+          </ion-select>
+          <img src="assets/images/cicon5.svg" dateTime alt="" />
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <div class="labeltxt">Are you vegetarian or vegan?</div>
+          <ion-row>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>Vegetarian</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>Vegan</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+      </ion-list>
+      <ion-list>
+        <div class="labeltxt">Do you suffer from any of the following diseases or intolerances?</div>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-select placeholder="Kidney disease">
+            <ion-select-option value="f">Kidney disease</ion-select-option>
+            <ion-select-option value="m">Kidney disease 1</ion-select-option>
+          </ion-select>
+          <img src="assets/images/cicon6.svg" dateTime alt="" />
+        </ion-item>
+      </ion-list>
+      <ion-list lines="none">
+        <div class="labeltxt">What foods do you not like?</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Type here..." autocapitalize="off" required>
+            <img src="assets/images/cicon7.svg" alt="" />
+          </ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <div class="labeltxt">Are you stressed?</div>
+          <ion-row>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>Yes</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>No</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+      </ion-list>
+      <ion-list>
+        <div class="labeltxt">Do you want to be personally motivated?</div>
+          <ion-row>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>Yes</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item class="ion-no-padding" lines="none">
+                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>No</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+      </ion-list>
+      <div bottomBtm class="ion-text-center">
+        <ion-button shape="round" routerLink="/completeprofile/uploadphoto" color="primary">Next</ion-button>
+      </div>
+    </form>
+  </div>
+ 
+</ion-content>

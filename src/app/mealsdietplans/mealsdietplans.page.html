@@ -1,0 +1,140 @@
+<ion-header [class.show-background]="showToolbar">
+  <ion-toolbar class="py-2" lines="none">
+     <ion-title class="ion-text-center">
+       Meals & Diet Plans <br />
+       <span dateShow> {{getmonth(currentday)}} {{currentday |date: 'd'}}, {{getday(currentday)}} </span>
+      </ion-title>
+     
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)"  style="background-image: url('assets/images/circlebg.svg');">
+  <div wrapper>
+    <div chooseExpert>
+      <h2 routerLink="/weekexercise">Today’s Meal Plan <span>View Full Week <img src="assets/images/arrowri.svg" /></span></h2>
+      <p *ngIf="categories?.length==0">Meals not scheduled for today !</p>
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let cat of categories">
+          <div slideBox routerLink="mealsdetails/{{cat?.id}}">
+             <img src="{{IMAGES_URL}}/{{cat?.photo}}" />
+             <h3>{{cat?.name}}</h3>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <div waterReminder>
+      <div waterCon> 
+        <h2>Water Reminder <span>{{filled?.length}} Glass / {{filled?.length * 0.25}} ltr of water per day</span></h2>
+        <p>Set Reminder</p>
+      </div>
+            <!--img src="assets/images/glass.png" /-->
+      <img src="assets/images/Group-2.png" glassimage *ngFor="let fil of filled"/>
+      <!--img src="assets/images/Group-1.png" glassimage /-->
+      <img src="assets/images/Union.png" glassimage (click)="addglass();" 
+       *ngIf="filled?.length < glasscount"/>
+    </div>
+    <div padBox1>
+      <h2>Nutritions</h2>
+      <ion-row>
+        <ion-col size="6">
+          <div circleProgress>
+              <circle-progress
+              [radius]= 50
+              [space]="-12"
+              [outerStrokeGradient]= true
+              [outerStrokeWidth]= 12
+              [outerStrokeColor]= "'#56BBB3'"
+              [outerStrokeGradientStopColor]= "'#56BBB3'"
+              [innerStrokeColor]= "'#F5F5F5'"
+              [innerStrokeWidth]= 12
+              [outerStrokeLinecap]= "'butt'"
+              [title]= intakecar
+              [showUnits]= "false"
+              [showSubtitle]= "false"
+              [percent]=carper
+              [responsive]="true"
+              [clockwise]="false"
+              [titleFontSize]= "'28'"
+              [titleFontWeight]="'600'"
+              ></circle-progress>
+              <h3>Carbohydrate</h3>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <div circleProgress>
+              <circle-progress
+              [radius]= 50
+              [space]="-12"
+              [outerStrokeGradient]= true
+              [outerStrokeWidth]= 12
+              [outerStrokeColor]= "'#7C56BB'"
+              [outerStrokeGradientStopColor]= "'#7C56BB'"
+              [innerStrokeColor]= "'#F5F5F5'"
+              [innerStrokeWidth]= 12
+              [outerStrokeLinecap]= "'butt'"
+              [title]= intakecal
+              [showUnits]= "false"
+              [showSubtitle]= "false"
+              [percent]=calper
+              [responsive]="true"
+              [clockwise]="false"
+              [titleFontSize]= "'28'"
+              [titleFontWeight]="'600'"
+              ></circle-progress>
+              <h3>Calories</h3>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <div circleProgress>
+              <circle-progress
+              [radius]= 50
+              [space]="-12"
+              [outerStrokeGradient]= true
+              [outerStrokeWidth]= 12
+              [outerStrokeColor]= "'#F8C100'"
+              [outerStrokeGradientStopColor]= "'#F8C100'"
+              [innerStrokeColor]= "'#F5F5F5'"
+              [innerStrokeWidth]= 12
+              [outerStrokeLinecap]= "'butt'"
+              [title]= intakefat
+              [showUnits]= "false"
+              [showSubtitle]= "false"
+              [percent]=fatper
+              [clockwise]="false"
+              [responsive]="true"
+              [titleFontSize]= "'28'"
+              [titleFontWeight]="'600'"
+              ></circle-progress>
+              <h3>Fat</h3>
+          </div>
+        </ion-col>
+        
+        <ion-col size="6">
+          <div circleProgress>
+              <circle-progress
+              [radius]= 50
+              [space]="-12"
+              [outerStrokeGradient]= true
+              [outerStrokeWidth]= 12
+              [outerStrokeColor]= "'#D80034'"
+              [outerStrokeGradientStopColor]= "'#D80034'"
+              [innerStrokeColor]= "'#F5F5F5'"
+              [innerStrokeWidth]= 12
+              [outerStrokeLinecap]= "'butt'"
+              [title]= intakepro
+              [showUnits]= "false"
+              [showSubtitle]= "false"
+              [percent]=proper
+              [responsive]="true"
+              [clockwise]="false"
+              [titleFontSize]= "'28'"
+              [titleFontWeight]="'600'"
+              ></circle-progress>
+              <h3>Protien</h3>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

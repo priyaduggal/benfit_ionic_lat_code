@@ -1,0 +1,41 @@
+<ion-header >
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/tabs/settings" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Event News</ion-title>
+    <ion-img slot="end" routerLink="addevents" src="assets/images/corssnoti.svg"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/circlebg1.svg');">
+  <div wrapper>
+    <div eventContainer *ngFor="let ev of events" >
+      <!--div eventBox>
+        <h2>Benfit Club <span>8 min</span></h2>
+        <p><img src="assets/images/location.svg" /> California</p>
+      </div-->
+
+      <div eventBoxImg style="background-image: url('{{IMAGES_URL}}/{{ev?.image}}');">
+        <div eventDesc>
+          <h3>{{ev?.title}}</h3>
+          <p><span>{{ev?.time}}</span>{{ev?.event_date | date: 'dd MMM yyyy'}}</p>
+        </div>
+      </div>
+
+      <div eventBox1>
+        <p class="pHead"><img src="assets/images/location1.svg" /> {{ev?.location}}</p>
+        <p>{{ev?.description}}
+        </p>
+        <hr />
+      </div>
+     <div btnbottom>
+      
+      <ion-button approve-btn expand="full" shape="round" routerLink="editevent/{{ev?.id}}"><ion-icon name="create-outline"></ion-icon></ion-button>      
+   
+      <ion-button reject-btn expand="full" shape="round" (click)="delete(ev?.id)"><ion-icon name="trash-outline"></ion-icon></ion-button>     
+    
+  </div>
+    </div>
+  </div>
+</ion-content>

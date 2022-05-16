@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+	 <ion-back-button slot="start" defaultHref="/signup"  icon="chevron-back-outline">
+    </ion-back-button>
+  
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-img src="assets/images/signup.jpg" fiximg></ion-img>
+
+  <!-- Cicle Img -->
+  <ion-img src="assets/images/circle.svg" circle></ion-img>
+  <!-- End Circle Img -->
+
+  <div login>
+    <ion-img src="assets/images/logo.png" logo alt="Logo"></ion-img>
+    <form>
+      <div class="ion-text-center">
+        <h1>SIGNUP</h1>
+        <p>Sign Up to Get Started</p>
+      </div>
+      <ion-list lines="none">
+        <ion-row>
+          <ion-col size="6" pl0>
+            <div class="labeltxt">First Name</div>
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-input type="text" placeholder="Enter First Name" autocapitalize="off" name="first_name"  [(ngModel)]="first_name">
+              </ion-input>
+            </ion-item>
+             <span error *ngIf="errors.indexOf(first_name) >= 0 && is_submit_signup== true">Please enter first name</span>
+          </ion-col>
+          <ion-col size="6" pr0>
+            <div class="labeltxt">Last Name</div>
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-input type="text" placeholder="Enter Last Name" autocapitalize="off" name="last_name" [(ngModel)]="last_name"  >
+              </ion-input>
+            </ion-item>
+             <span error *ngIf="errors.indexOf(last_name) >= 0 && is_submit_signup== true">Please enter last name</span>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Email</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="email" placeholder="Enter Email"  autocapitalize="off" name="email" [(ngModel)]="email" >
+          </ion-input>
+        </ion-item>
+         <span error *ngIf="errors.indexOf(email) >= 0 && is_submit_signup == true">Please enter email address</span>
+          <span error *ngIf="errors.indexOf(email) == -1 && is_submit_signup == true && !reg_exp_email.test(email.toLowerCase())">Please enter valid email address</span>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Phone Number</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="text" placeholder="Enter Phone" autocapitalize="off" name="phone" [(ngModel)]="phone">
+          </ion-input>
+        </ion-item>
+         <span error *ngIf="errors.indexOf(phone) >= 0 && is_submit_signup == true">Please enter phone number</span>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Password</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input [type]="hidePass ? 'password' : 'text'" passInput placeholder="Enter Password" name="password" autocapitalize="off" [(ngModel)]="password">
+          </ion-input>
+          <ion-icon eyesIcon [name]="hidePass ? 'eye-off-outline' : 'eye'" (click)="myFunction()"></ion-icon>
+        </ion-item>
+           <span error *ngIf="errors.indexOf(password) >= 0 && is_submit_signup == true">Please enter password</span>
+        <span error *ngIf="errors.indexOf(password) ==-1 && is_submit_signup == true && !reg_password.test(password)">Password must be Minimum eight characters, at least one letter, one number and one special character!</span>
+      </ion-list>
+
+      <ion-list lines="none">
+        <div class="labeltxt">Confirm Password</div>
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input [type]="hidePass1 ? 'password' : 'text'" passInput placeholder="Enter Confirm Password" name="confirm_password" [(ngModel)]="confirm_password" autocapitalize="off" ></ion-input>
+          <ion-icon eyesIcon [name]="hidePass1 ? 'eye-off-outline' : 'eye'" (click)="myFunction1()"></ion-icon>
+        </ion-item>
+          <span error *ngIf="errors.indexOf(confirm_password) >= 0 && is_submit_signup == true">Please enter confirm password</span>
+           <span error *ngIf="errors.indexOf(confirm_password) ==-1 && is_submit_signup == true && password!=confirm_password">Password and confirm password does not match</span>
+      </ion-list>
+
+      <ion-list>
+        <div class="labeltxt">Favourite Sports</div>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-select placeholder="Nutrition"  name="fav_sports" [(ngModel)]="fav_sports">
+            <ion-select-option value="Cricket">Cricket</ion-select-option>
+            <ion-select-option value="Basket">Basket Ball</ion-select-option>
+          </ion-select>
+        </ion-item>
+         <span error *ngIf="errors.indexOf(fav_sports) >= 0 && is_submit_signup == true">Please select favourite sport</span>
+      </ion-list>
+
+      <ion-button expand="full" shape="round" color="primary" (click)="submit()" >Sign up</ion-button>
+      <p bottomlink>Already have an account?<a routerLink="/login">Login Now</a></p>
+    </form>
+  </div>
+</ion-content>

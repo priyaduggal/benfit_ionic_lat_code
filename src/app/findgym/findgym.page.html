@@ -1,0 +1,50 @@
+<ion-header [class.show-background]="showToolbar">
+    <ion-toolbar class="py-2" lines="none">
+       <ion-back-button slot="start" defaultHref=""  icon="chevron-back-outline">
+    </ion-back-button >
+        <ion-title slot="start">
+          Find Gym
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div wrapper>
+<ion-searchbar placeholder="all locations"></ion-searchbar>
+<img class="main-map-cl" src="assets\images\map.png">
+</div>
+ <ion-item lines="none" detail="false" [ngClass]="{'active': hideMe1}">
+<ion-label>
+<h2><div class="cover"><div class="img-div"><img src="assets\images\img-main.png"> <div class="contct"><h3>Fitklusiv</h3>
+<ul><li>Münsterstraße 398
+</li><li>
+40470 Düssedlorf</li></ul>
+</div><div class="icon-bottom"> <ion-buttons arrowbtn  (click)="toggleClass1()"><ion-icon name="chevron-down-outline"></ion-icon></ion-buttons></div></div></div></h2>
+
+
+<div vieworder  *ngIf="hideMe1">
+<div class="main-coz"><div class="main-conta">
+<div class="date-im"><span class="color-bold">Tuesday,</span> 13 January, 17:30 <br><span class="main-fd">60 min bike course</span> </div>
+<div img-sm><img src="assets\images\small-im.png"></div>
+</div>
+<div class="main-btms">
+<div class="main-divz">Fitclusiv (Düsseldorf)
+</div>
+<div class="book_btn_div"><ion-button book_btn shape="round" routerLink="/findgymdetails">Book</ion-button>
+</div>
+</div>
+</div><div class="main-coz"><div class="main-conta">
+<div class="date-im"><span class="color-bold">Tuesday,</span> 13 January, 17:30 <br><span class="main-fd">60 min bike course</span> </div>
+<div img-sm><img src="assets\images\small-im.png"></div>
+</div>
+<div class="main-btms">
+<div class="main-divz">Fitclusiv (Düsseldorf)
+</div>
+<div class="book_btn_div"><ion-button book_btn shape="round" routerLink="/findgymdetails">Book</ion-button>
+</div>
+</div>
+</div></div>
+</ion-label>
+</ion-item>
+<div floating-icon><ion-icon name="add-outline"></ion-icon>
+</div>
+</ion-content>

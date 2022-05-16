@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar class="py-2" lines="none">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="/foodresponsible" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+     <ion-title class="ion-text-center">Food Recommendation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div wrapper>
+    
+    <div padBox>
+      <ion-thumbnail>
+        <a routerLink="/"><img src="assets/images/food2.png"/></a>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <a routerLink="/"><span>Cheese</span></a> </p>
+        <p pricePro><span>This makes sense, given that an entire cup of milk is used to produce a single thick slice of cheese.</span></p>
+      </ion-label>
+    </div>
+
+    <div padBox>
+      <ion-thumbnail>
+        <a routerLink="/"><img src="assets/images/food1.png"/></a>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <a routerLink="/"><span>Avocados</span></a> </p>
+        <p pricePro><span>Whereas most fruits primarily contain carbs, avocados are loaded with fats.</span></p>
+      </ion-label>
+    </div>
+
+    <div padBox>
+      <ion-thumbnail>
+        <a routerLink="/"><img src="assets/images/food3.png"/></a>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <a routerLink="/"><span>Dark Chocolate</span></a> </p>
+        <p pricePro><span>Dark chocolate is one of those rare health foods that actually taste incredible.</span></p>
+      </ion-label>
+    </div>
+
+    <div padBox>
+      <ion-thumbnail>
+        <a routerLink="/"><img src="assets/images/food4.png"/></a>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="mt-0" category> <a routerLink="/"><span>Whole Eggs</span></a> </p>
+        <p pricePro><span>Whole eggs used to be considered unhealthy because the yolks are high in cholesterol and fat.</span></p>
+      </ion-label>
+    </div>
+
+  </div>
+
+  <div chooseExpert>
+    <h2>Choose Your Expert</h2>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <div slideBox style="background-image: url('assets/images/choose1.png');"  routerLink="/chooseexpert">
+           <h3>Fish full with protein</h3>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div slideBox style="background-image: url('assets/images/choose2.png');" routerLink="/chooseexpert">
+          <h3>Full with Nutrition</h3>
+       </div>
+      </ion-slide>
+      <ion-slide>
+        <div slideBox style="background-image: url('assets/images/choose1.png');" routerLink="/chooseexpert">
+          <h3>Fish full with protein</h3>
+       </div>
+      </ion-slide>
+      <ion-slide>
+        <div slideBox style="background-image: url('assets/images/choose2.png');" routerLink="/chooseexpert">
+          <h3>Fish full with protein</h3>
+       </div>
+      </ion-slide>
+      <ion-slide>
+        <div slideBox style="background-image: url('assets/images/choose1.png');" routerLink="/chooseexpert">
+          <h3>Full with Nutrition</h3>
+       </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

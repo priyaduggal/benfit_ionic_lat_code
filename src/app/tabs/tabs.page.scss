@@ -1,0 +1,36 @@
+[homeIcon]{
+  position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 32px;
+    height: auto;
+    [hmimg]{
+      width: 50px;
+    }
+}
+
+[centerhome]
+{
+  position: relative;
+  top: 0px;
+  background-color: transparent;
+  img{
+    width: auto;
+  }
+}
+ion-tab-bar {
+    background: #2AB4AE;
+}
+ion-tab-bar{
+  contain: initial;
+  ion-tab-button{
+    padding: 0;    background: transparent;
+  }
+  img{filter: brightness(0) invert(1);}
+}
+
+.tab-selected{
+  img{
+   filter: brightness(1) invert(0);
+  }
+}

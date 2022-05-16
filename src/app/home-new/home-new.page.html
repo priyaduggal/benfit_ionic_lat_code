@@ -1,0 +1,257 @@
+<ion-header [class.show-background]="showToolbar">
+    <ion-toolbar class="py-2" lines="none">
+        <ion-img slot="start" src="assets/images/user-image.png" userimg></ion-img>
+        <ion-title slot="start">
+            <span class="hiName">Hi Tom,</span> <br />
+            <span>what’s on today?</span>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+    <div wrapper>
+        <div calendarbg class="" style="">
+            <div class="flexCal">
+                <div *ngFor="let wek of week" class="commoncal" [ngClass]="firstday == wek ? 'active' : 'my_class2'" (click)="getmeals(wek)">
+                    <h2>{{getday(wek)}}</h2>
+                    <h3>{{wek| date : ' d'}}</h3>
+                </div>
+            </div>
+            <div time-schedule>
+                <div inner-main><strong>9am</strong> yoga class <span>@homesplace</span></div>
+                <div inner-main><strong>5pm</strong> personal training session with <span>Lucy</span></div>
+            </div>
+        </div>
+        <div steps>
+            <h4>Steps</h4>
+            <div class="quizz-progress ion-text-center">
+                <ion-progress-bar value="0.6"></ion-progress-bar>
+            </div>
+            <h4>Calories burned</h4>
+            <div class="quizz-progress ion-text-center">
+                <ion-progress-bar value="0.4"></ion-progress-bar>
+            </div>
+        </div>
+
+        <div new-cal>
+            <h5>You have eaten <span>450 kcal </span>today!</h5>
+            <div main-load>
+                <div class="highlightRoundBox">
+                    <span class="loading">
+                        <span class="edge edge-left"></span>
+                        <span class="edge edge-right"></span>
+                    </span>
+                </div>
+                <div class="highlightRoundBox green-round-border">
+                    <span class="loading">
+                        <span class="edge edge-left"></span>
+                        <span class="edge edge-right"></span>
+                    </span>
+                </div>
+                <div class="highlightRoundBox purple-round-border">
+                    <span class="loading">
+                        <span class="edge edge-left"></span>
+                        <span class="edge edge-right"></span>
+                    </span>
+                </div>
+                <div text-cen>
+                    <h1>
+                        <span>35</span><br />
+                        Of your<br />
+                        Daily needs
+                    </h1>
+                </div>
+            </div>
+            <div class="cell-flx">
+                <div class="carbs dot">
+                    carbs
+                </div>
+                <div class="gram">
+                    40g
+                </div>
+                <div class="percentage">
+                    10%
+                </div>
+            </div>
+            <div class="cell-flx">
+                <div class="green dot">
+                    Fat
+                </div>
+                <div class="gram">
+                    40g
+                </div>
+                <div class="percentage">
+                    10%
+                </div>
+            </div>
+            <div class="cell-flx">
+                <div class="blue dot">
+                    Protein
+                </div>
+                <div class="gram">
+                    40g
+                </div>
+                <div class="percentage">
+                    10%
+                </div>
+            </div>
+            <ion-button track_now_btn shape="round" routerLink="/activity-new">Track Now</ion-button>
+        </div>
+        <div looking-for>
+            <h1>What are you looking for?</h1>
+            <div main-steps>
+                <ul>
+                    <li routerLink="/tabs/bookexpert">
+                        <div inner-st>
+                            <img src="assets/images/workout-img.png" />
+                        </div>
+                        <h3>Workout</h3>
+                    </li>
+                    <li>
+                        <div inner-st>
+                            <img src="assets/images/nutrision.png" />
+                        </div>
+                        <h3>Nutrition</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ion-list class="ion-no-padding">
+		<ion-item community_div lines="none" detail="false">
+			<ion-label (click)="toggleClass1()">
+				<img src="assets/images/benfit_logo.png" alt="" />community
+			</ion-label>
+			<ion-buttons arrowbtn shape="round" slot="end">
+				<ion-icon [ngClass]="{'active': hideMe1}"  name="chevron-down-outline"></ion-icon>
+			</ion-buttons>
+		</ion-item>
+		<div post_div *ngIf="hideMe1">
+			<ion-item post_add_div lines="none" detail="false">
+				<ion-avatar slot="start">
+					<img src="assets/images/postimg1.jpg"/>
+				</ion-avatar>
+				<ion-label>
+					<h2>Tom</h2>
+					<ion-input type="text" placeholder="post your updates here …"></ion-input>
+				</ion-label>
+				<ion-buttons plus_addbtn slot="end">
+					<ion-icon name="add-outline"></ion-icon>
+				</ion-buttons>
+			</ion-item>
+			<ion-card post_list>
+				<ion-card-header>
+					<ion-item post_user lines="none" detail="false">
+						<ion-avatar slot="start">
+							<img src="assets/images/postimg2.jpg"/>
+						</ion-avatar>
+						<ion-label>
+							<h2>Tinaslife90</h2>
+							<p>My lunch today 😍💪🏻 <br/>Just 226 kcal!! </p>
+						</ion-label>
+						<ion-buttons dots_btn slot="end">
+							<ion-icon name="ellipsis-horizontal"></ion-icon>
+						</ion-buttons>
+					</ion-item>
+				</ion-card-header>			
+				<img upload_post_img src="assets/images/post_img2.jpg"/>
+				<ion-card-content>
+					<h3 date_time>25 minutes ago</h3>
+					<div like_comment_div>
+						<ion-buttons like_comment_btn slot="end">
+							<ion-icon name="heart-outline"></ion-icon>
+						</ion-buttons>
+						<ion-buttons like_comment_btn slot="end">
+							<ion-icon name="chatbox-outline"></ion-icon>
+						</ion-buttons>
+					</div>
+				</ion-card-content>				
+			</ion-card>	
+			<ion-card post_list>
+				<ion-card-header>
+					<ion-item post_user lines="none" detail="false">
+						<ion-avatar slot="start">
+							<img src="assets/images/postimg3.jpg"/>
+						</ion-avatar>
+						<ion-label>
+							<h2>fitmarc99</h2>
+							<p>Had a great training session today with <a href="javascript:void(0)">@personaltrainerdennis</a> 💪🏻</p>
+							
+						</ion-label>
+						<ion-buttons dots_btn slot="end">
+							<ion-icon name="ellipsis-horizontal"></ion-icon>
+						</ion-buttons>
+					</ion-item>
+				</ion-card-header>			
+				<ion-card-content>
+					<h3 date_time>32 minutes ago</h3>
+					<div like_comment_div>
+						<ion-buttons like_comment_btn slot="end">
+							<ion-icon name="heart-outline"></ion-icon>
+						</ion-buttons>
+						<ion-buttons like_comment_btn slot="end">
+							<ion-icon name="chatbox-outline"></ion-icon>
+						</ion-buttons>
+					</div>
+				</ion-card-content>				
+			</ion-card>	
+			<ion-card post_list>
+				<ion-card-header>
+					<ion-item post_user lines="none" detail="false">
+						<ion-avatar slot="start">
+							<img src="assets/images/postimg4.jpg"/>
+						</ion-avatar>
+						<ion-label>
+							<h2>mareike_LOf</h2>
+							<p>Has successfully completed: <br/><a href="javascript:void(0)">Outdoor Training</a></p>
+							
+						</ion-label>
+						<ion-buttons dots_btn slot="end">
+							<ion-icon name="ellipsis-horizontal"></ion-icon>
+						</ion-buttons>
+					</ion-item>
+				</ion-card-header>			
+				<ion-card-content>
+					<h3 date_time>1 hour ago</h3>
+					<div like_comment_div>
+						<ion-buttons like_comment_btn slot="end">
+							<ion-icon name="heart-outline"></ion-icon>
+						</ion-buttons>
+						<ion-buttons like_comment_btn slot="end">
+							<ion-icon name="chatbox-outline"></ion-icon>
+						</ion-buttons>
+					</div>
+				</ion-card-content>				
+			</ion-card>	
+			<ion-card post_list>
+				<ion-card-header>
+					<ion-item post_user lines="none" detail="false">
+						<ion-avatar slot="start">
+							<img src="assets/images/postimg5.jpg"/>
+						</ion-avatar>
+						<ion-label>
+							<h2>Fitnessfreak</h2>
+							<p>Tried the protein bagel from <a href="javascript:void(0)">@benfit</a> today. Really tasty & top nutritional values!</p>
+							
+						</ion-label>
+						<ion-buttons dots_btn slot="end">
+							<ion-icon name="ellipsis-horizontal"></ion-icon>
+						</ion-buttons>
+					</ion-item>
+				</ion-card-header>
+				<img upload_post_img src="assets/images/post_img3.jpg"/>
+				<ion-card-content>
+					<h3 date_time>32 minutes ago</h3>
+					<div like_comment_div>
+						<ion-buttons like_comment_btn slot="end">
+							<ion-icon name="heart-outline"></ion-icon>
+						</ion-buttons>
+						<ion-buttons like_comment_btn slot="end">
+							<ion-icon name="chatbox-outline"></ion-icon>
+						</ion-buttons>
+					</div>
+				</ion-card-content>				
+			</ion-card>				
+		</div>
+    </ion-list>	
+</ion-content>

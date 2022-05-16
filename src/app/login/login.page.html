@@ -1,0 +1,38 @@
+<ion-content>
+  <!-- End Circle Img -->
+  <div login>
+  <div class="ion-text-right">
+        <img class="logs" src="assets/images/benfit_logo.png">
+      </div>
+    <form>
+      <div class="ion-text-right">
+	  <img class="my-mn" src="assets/images/mn.png">
+      </div>
+	  <h4>Hi tom,</h4>
+	  <img class="lts-m" src="assets/images/lets-st.png">
+      <ion-list lines="none">
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input type="email" name="email" placeholder="Enter Email" autocapitalize="off" [(ngModel)]="email">
+          </ion-input>
+        </ion-item>
+          <span error *ngIf="errors.indexOf(email) >= 0 && is_submit_login == true">Please enter email address</span>
+          <span error *ngIf="errors.indexOf(email) == -1 && is_submit_login == true && !reg_exp_email.test(email.toLowerCase())">Please enter valid email address</span>
+      </ion-list>
+
+      <ion-list lines="none">
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-input [type]="hidePass ? 'password' : 'text'"  placeholder="Enter Password" name="password" autocapitalize="off" [(ngModel)]="password">
+          </ion-input>
+          <ion-icon eyesIcon [name]="hidePass ? 'eye-off-outline' : 'eye'" (click)="myFunction()"></ion-icon>
+        </ion-item>
+        <span error *ngIf="errors.indexOf(password) >= 0 && is_submit_login == true">Please enter password</span>
+        <!--span error *ngIf="errors.indexOf(password) ==-1 && is_submit_login == true && !reg_password.test(password)">Password must be Minimum eight characters, at least one letter, one number and one special character!</span-->
+      </ion-list>
+      <!--h3 class="ion-text-right"><a routerLink="/forgotpassword">Forgot your Password?</a></h3>
+      <!--ion-button expand="full" routerLink="/tabs/tab1" shape="round" color="primary" >Login</ion-button-->
+       <ion-button loginbt expand="full" shape="round" color="" (click)="login()">Log in</ion-button>
+	   <p bottomlink>Don’t have an account? <a routerLink="/signup-new">Signup Now</a></p>
+      <!--p bottomlink>Don’t have an account? <a routerLink="/forgot-pwd">Signup Now</a></p-->
+    </form>
+  </div>
+</ion-content>

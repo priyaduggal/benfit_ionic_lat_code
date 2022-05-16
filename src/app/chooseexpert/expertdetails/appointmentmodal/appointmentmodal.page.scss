@@ -1,0 +1,86 @@
+ion-content
+{
+	[filtersec]
+	{
+	    padding: 20px;
+		height: 100%;
+	    [closebtn]
+		{
+		    display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 26px;
+			height: 26px;
+			font-size: 20px;
+			position: absolute;
+			right: 12px;
+			top: 12px;
+			z-index: 1;
+			border-radius: 50%;
+			background: var(--ion-color-primary);
+			color: var(--ion-color-white);
+		}
+		[checkboxlist]
+		{
+		    width: 100%;
+			display: block;
+			[checkboxinner]
+			{  
+				margin-bottom: 15px;
+				label 
+				{  
+					font-size: 18px;
+					border-radius: 10px;
+					color: #333;
+					width: 100%;
+					height: 65px;
+					padding: 0px 50px 0 15px;
+					font-weight: 500;
+					display: flex;
+					align-items: center;
+					position: relative;
+					border: 1px solid #f7f7f7;
+					background-color: #f7f7f7;
+					img{
+						width: 30px;
+						margin-right: 8px;
+					}
+					[checkboxbtn]
+					{
+						position: absolute;
+						right: 15px;
+						width: 26px;
+						height: 26px;
+						display: inline-flex;
+						align-items: center;
+						justify-content: center;
+						background: #fff;
+						border: 1px solid #D8D8D8;
+						border-radius: 50%;
+						ion-icon
+						{
+							opacity:0;
+							font-size: 19px;
+							color: var(--ion-color-primary);
+						}
+					}
+				}
+				input[type="radio"]:checked + label
+				{
+					background: transparent;
+					color: #000;
+					border: 1px solid var(--ion-color-primary);
+					[checkboxbtn]
+					{
+					    background: #DDF2F0;
+					    border: 1px solid var(--ion-color-primary);
+						ion-icon
+						{
+							opacity:1;
+						}
+					}
+				}
+			}		
+		}	
+	}
+}
